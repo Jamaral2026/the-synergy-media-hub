@@ -43,37 +43,45 @@
       margin-bottom: 55px;
     }
 
-    /* PREMIUM DUAL-ROW TRANSFORMATION LAYOUT */
+    /* CLEAR DUAL-VALUE ROW TRANSMISSION */
     .transformation-dashboard {
-      margin: 0 0 70px 0;
-      border-top: 4px solid #000000;
-      border-bottom: 4px solid #000000;
-      padding: 20px 0;
-    }
-    .metric-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
+      gap: 40px;
+      margin: 0 0 70px 0;
+      border-top: 4px solid #000000;
+      border-bottom: 4px solid #000000;
+      padding: 35px 0;
     }
-    .metric-row:first-child {
-      border-bottom: 1px dashed #cccccc;
+    .metric-column {
+      flex: 1;
+    }
+    .metric-column.right-align {
+      text-align: right;
     }
     .counter-label {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #444444;
+      margin-bottom: 12px;
     }
+    
+    /* THE AMOUNTS CODE SPECIFICATION */
     .counter-box {
-      font-size: clamp(3rem, 9vw, 5.8rem); /* Kept maximum size intact */
+      font-size: clamp(3rem, 9vw, 5.8rem); /* Boosted by 2 points */
       font-weight: 900;
-      color: #009933; /* High-stature green for maximum financial conversion impact */
       font-variant-numeric: tabular-nums;
       letter-spacing: -0.04em;
       margin: 0;
-      text-align: right;
+    }
+    .counter-box.black-type {
+      color: #000000; /* Left side completely black */
+    }
+    .counter-box.green-type {
+      color: #009933; /* Right side completely green */
     }
     
     /* ENHANCED TITLE FONTS */
@@ -98,7 +106,7 @@
       font-weight: 900;
     }
 
-    /* SCALED SCRIPT TEXT */
+    /* SCRIPT TEXT */
     p {
       font-size: 1.55rem;
       color: #111111;
@@ -161,15 +169,15 @@
   <h1 class="hero-brand">OPENAI</h1>
   <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
   
-  <!-- REAL-TIME CONVERSION INFRASTRUCTURE (RIGHT-ALIGNED GREEN COUNTERS) -->
+  <!-- SIDE-BY-SIDE SIDE LAYOUT WITH DUAL COLOR LOGIC -->
   <div class="transformation-dashboard">
-    <div class="metric-row">
+    <div class="metric-column">
       <div class="counter-label">The Sales Recovered In Real-Time:</div>
-      <div class="counter-box">$<span id="sales-counter">158,000.00</span></div>
+      <div class="counter-box black-type">$<span id="sales-counter">158,000.00</span></div>
     </div>
-    <div class="metric-row">
+    <div class="metric-column right-align">
       <div class="counter-label">The Revenue Restored:</div>
-      <div class="counter-box">$<span id="revenue-counter">3,450,098.00</span></div>
+      <div class="counter-box green-type">$<span id="revenue-counter">3,450,098.00</span></div>
     </div>
   </div>
   
