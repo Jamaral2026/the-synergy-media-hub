@@ -9,87 +9,132 @@
       background-color: #ffffff;
       color: #000000;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.4;
+      line-height: 1.35;
       margin: 0;
       padding: 60px 20px;
     }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
     
-    /* MASSIVE TYPOGRAPHY FOR OPENAI IMPACT */
-    .hero-brand {
-      font-size: clamp(4rem, 12vw, 8rem);
+    /* LOGO AREA */
+    .logo-wrapper {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+    .logo-text {
+      font-size: 1.1rem;
       font-weight: 900;
-      letter-spacing: -0.06em;
-      line-height: 0.85;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      margin: 0 0 10px 0;
+      color: #000000;
+    }
+    
+    /* MAXIMUM TYPOGRAPHY IMPACT FOR OPENAI */
+    .hero-brand {
+      font-size: clamp(5rem, 15vw, 11rem);
+      font-weight: 900;
+      letter-spacing: -0.07em;
+      line-height: 0.8;
+      text-transform: uppercase;
+      margin: 0 0 15px 0;
     }
     
     .hero-stat {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      font-weight: 900;
       color: #000000;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 30px;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+      margin-bottom: 35px;
     }
 
-    /* THE RUNNING NUMBER DISPLAY */
+    /* THE RUNNING REVENUE ENGINE */
+    .counter-label {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #666666;
+      margin-bottom: 5px;
+    }
     .counter-box {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      color: #111111;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      color: #000000;
       font-variant-numeric: tabular-nums;
-      margin: 20px 0 40px 0;
+      margin: 0 0 50px 0;
+      letter-spacing: -0.04em;
     }
     
+    /* ENHANCED TITLE FONTS */
     .headline-sub {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #444444;
-      margin-bottom: 50px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 40px;
     }
     
     .section-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: #000000;
-      border-bottom: 2px solid #000000;
+      border-bottom: 3px solid #000000;
       padding-bottom: 8px;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      font-weight: 700;
+      margin-top: 60px;
+      margin-bottom: 25px;
+      font-weight: 900;
     }
 
     p {
-      font-size: 1.2rem;
-      color: #222222;
-      margin-bottom: 25px;
+      font-size: 1.3rem;
+      color: #111111;
+      margin-bottom: 30px;
     }
     
+    /* INVESTMENT ARHITECTURE */
     .investment-tier {
-      margin-bottom: 30px;
-      padding-left: 15px;
-      border-left: 3px solid #000000;
+      margin-bottom: 40px;
+      padding-left: 20px;
+      border-left: 4px solid #000000;
     }
     .investment-name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 4px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 5px;
+      letter-spacing: -0.02em;
     }
     .investment-cost {
-      font-size: 1.15rem;
-      font-weight: 600;
+      font-size: 1.25rem;
+      font-weight: 700;
       color: #000000;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .investment-desc {
-      color: #444444;
-      font-size: 1.1rem;
+      color: #333333;
+      font-size: 1.15rem;
+    }
+
+    /* CRITICAL TARIFF WARNING */
+    .tariff-note {
+      background-color: #f5f5f5;
+      border: 1px solid #000000;
+      padding: 25px;
+      margin-top: 35px;
+      font-size: 1.15rem;
+      line-height: 1.4;
+      color: #000000;
+    }
+    .tariff-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
     }
   </style>
 </head>
@@ -97,32 +142,48 @@
 
 <div class="container">
 
-  <!-- OPENAI IMPOSING HEADER -->
+  <!-- LOGO POSITIONED BEFORE THE BIG CALL -->
+  <div class="logo-wrapper">
+    <!-- Replace 'logo.png' with your real file name inside your repository when uploaded -->
+    <img src="logo.png" alt="DUJAN MEDIA" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';" style="max-height: 50px; display: block; margin-bottom: 10px;">
+    <div id="logo-fallback" class="logo-text" style="display:none;">DUJAN MEDIA</div>
+  </div>
+
+  <!-- MASSIVE TYPOGRAPHY FOR OPENAI IMPACT -->
   <h1 class="hero-brand">OPENAI</h1>
   <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
   
-  <!-- INTERACTIVE ROLLING COUNTER -->
+  <!-- REVENUE RESTORED IN REAL-TIME -->
+  <div class="counter-label">The Sales Recovered In Real-Time — The Revenue Restored:</div>
   <div class="counter-box">$<span id="revenue-counter">142,390.00</span></div>
   
+  <!-- ENHANCED TITLE FONT FOR THE MAIN TRANSITION -->
   <div class="headline-sub">
     Goodbye Content Marketing. Welcome to Content Clienting.
   </div>
 
   <p>
-    Conscious Clients Constructing (CCC) isolates drop-off vectors at checkout instantly. The system intercepts the 83.1% of high-intent buyers abandoning the pipeline and converts those lost interactions into immediate cash to the bank before the session expires.
+    Conscious Clients Constructing (CCC) isolates code-level drop-off leaks at the payment gateway instantly. The system intercepts high-intent enterprise buyers abandoning the checkout flow and converts those aborted sessions into cleared bank assets before the browser tab closes.
   </p>
 
-  <!-- SPECIFIC, SHORT, DIRECT SECTIONS -->
+  <!-- REALS BLUEPRINT REALIGNMENT -->
   <div class="section-title">Real-Time Revenue Realignment</div>
   <p>
-    Active tracking across core pipeline networks captures leaked transaction data instantly. The console displays the dynamic recovery velocity, showing the exact dollar amount salvaged from processing leaks in real time.
+    Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from checkout script friction instantly.
   </p>
 
+  <!-- EXCLUSIVE LAUNCH COHORT IN ACTIVE VOICE -->
   <div class="section-title">Active Rollout Capacity</div>
   <p>
-    Deployment access remains strictly limited to exactly ten (10) enterprise partners for this active rollout. The framework accepts only organizations equipped to place deep consumer resonance and active intelligence above volume-chasing tactics.
+    This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
   </p>
 
+  <div class="tariff-note">
+    <span class="tariff-title">CRITICAL TARIFF NOTE:</span>
+    Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
+  </div>
+
+  <!-- CORPORATE INVESTMENT PATHWAYS -->
   <div class="section-title">Corporate Investment Levels</div>
 
   <div class="investment-tier">
@@ -140,25 +201,25 @@
   <div class="investment-tier">
     <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
     <div class="investment-cost">$7,500.00 / month (Secure Automated Billing)</div>
-    <div class="investment-desc">Deploys sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000.00 monthly.</div>
+    <div class="investment-desc">Deploys sub-second API gateway patches and micro-second ledger matching updates for processing pipelines exceeding $1,000,000.00 monthly.</div>
   </div>
 
 </div>
 
-<!-- LIVE MOVING REVENUE SCRIPT -->
+<!-- LIVE MOVING REVENUE ENGINE -->
 <script>
   let count = 142390.00;
   const counterElement = document.getElementById('revenue-counter');
   
   setInterval(() => {
     // Simulates dynamic transaction recovery increments
-    const increment = Math.random() * 45 + 5; 
+    const increment = Math.random() * 85 + 15; 
     count += increment;
     counterElement.innerText = count.toLocaleString('en-US', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
-  }, 1200); // Updates dynamic velocity continuously
+  }, 950); // Accelerated velocity to show high-stature momentum
 </script>
 
 </body>
