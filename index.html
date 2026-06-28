@@ -43,38 +43,37 @@
       margin-bottom: 55px;
     }
 
-    /* SIDE-BY-SIDE REAL-TIME METRICS DYNAMICS (REDUCED 2 ADDITIONAL FONT POINTS) */
+    /* PREMIUM DUAL-ROW TRANSFORMATION LAYOUT */
     .transformation-dashboard {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px; /* Increased separation gap */
       margin: 0 0 70px 0;
       border-top: 4px solid #000000;
       border-bottom: 4px solid #000000;
-      padding: 35px 0;
+      padding: 20px 0;
     }
-    .metric-column {
-      flex: 1;
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
     }
-    .metric-column.right-align {
-      text-align: right;
+    .metric-row:first-child {
+      border-bottom: 1px dashed #cccccc;
     }
     .counter-label {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #444444;
-      margin-bottom: 12px;
     }
     .counter-box {
-      font-size: clamp(2.2rem, 6.5vw, 4.6rem); /* Reduced by 2 more full font points to provide complete breathing room */
+      font-size: clamp(3rem, 9vw, 5.8rem); /* Kept maximum size intact */
       font-weight: 900;
-      color: #000000;
+      color: #009933; /* High-stature green for maximum financial conversion impact */
       font-variant-numeric: tabular-nums;
       letter-spacing: -0.04em;
       margin: 0;
+      text-align: right;
     }
     
     /* ENHANCED TITLE FONTS */
@@ -162,13 +161,13 @@
   <h1 class="hero-brand">OPENAI</h1>
   <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
   
-  <!-- SIDE BY SIDE REAL-TIME TRANSFORMATION METRICS WITH COMFORTABLE GAPPING -->
+  <!-- REAL-TIME CONVERSION INFRASTRUCTURE (RIGHT-ALIGNED GREEN COUNTERS) -->
   <div class="transformation-dashboard">
-    <div class="metric-column">
+    <div class="metric-row">
       <div class="counter-label">The Sales Recovered In Real-Time:</div>
       <div class="counter-box">$<span id="sales-counter">158,000.00</span></div>
     </div>
-    <div class="metric-column right-align">
+    <div class="metric-row">
       <div class="counter-label">The Revenue Restored:</div>
       <div class="counter-box">$<span id="revenue-counter">3,450,098.00</span></div>
     </div>
