@@ -47,25 +47,41 @@
       color: #000000;
       letter-spacing: -0.05em;
       line-height: 1.05;
-      margin-bottom: 35px;
+      margin-bottom: 45px;
     }
 
-    /* THE RUNNING REVENUE ENGINE */
+    /* SIDE-BY-SIDE REAL-TIME METRICS DYNAMICS */
+    .transformation-dashboard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin: 0 0 60px 0;
+      border-top: 1px solid #000000;
+      border-bottom: 1px solid #000000;
+      padding: 25px 0;
+    }
+    .metric-column {
+      flex: 1;
+    }
+    .metric-column.right-align {
+      text-align: right;
+    }
     .counter-label {
       font-size: 1rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: #666666;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
     .counter-box {
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
       font-weight: 900;
       color: #000000;
       font-variant-numeric: tabular-nums;
-      margin: 0 0 50px 0;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
+      margin: 0;
     }
     
     /* ENHANCED TITLE FONTS */
@@ -96,7 +112,7 @@
       margin-bottom: 30px;
     }
     
-    /* INVESTMENT ARHITECTURE */
+    /* INVESTMENT ARCHITECTURE */
     .investment-tier {
       margin-bottom: 40px;
       padding-left: 20px;
@@ -144,7 +160,6 @@
 
   <!-- LOGO POSITIONED BEFORE THE BIG CALL -->
   <div class="logo-wrapper">
-    <!-- Replace 'logo.png' with your real file name inside your repository when uploaded -->
     <img src="logo.png" alt="DUJAN MEDIA" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';" style="max-height: 50px; display: block; margin-bottom: 10px;">
     <div id="logo-fallback" class="logo-text" style="display:none;">DUJAN MEDIA</div>
   </div>
@@ -153,11 +168,19 @@
   <h1 class="hero-brand">OPENAI</h1>
   <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
   
-  <!-- REVENUE RESTORED IN REAL-TIME -->
-  <div class="counter-label">The Sales Recovered In Real-Time — The Revenue Restored:</div>
-  <div class="counter-box">$<span id="revenue-counter">142,390.00</span></div>
+  <!-- SIDE BY SIDE REAL-TIME TRANSFORMATION METRICS -->
+  <div class="transformation-dashboard">
+    <div class="metric-column">
+      <div class="counter-label">The Sales Recovered In Real-Time:</div>
+      <div class="counter-box">$<span id="sales-counter">158,000.00</span></div>
+    </div>
+    <div class="metric-column right-align">
+      <div class="counter-label">The Revenue Restored:</div>
+      <div class="counter-box">$<span id="revenue-counter">3,450,098.00</span></div>
+    </div>
+  </div>
   
-  <!-- ENHANCED TITLE FONT FOR THE MAIN TRANSITION -->
+  <!-- MAIN TRANSITION -->
   <div class="headline-sub">
     Goodbye Content Marketing. Welcome to Content Clienting.
   </div>
@@ -172,7 +195,7 @@
     Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from checkout script friction instantly.
   </p>
 
-  <!-- EXCLUSIVE LAUNCH COHORT IN ACTIVE VOICE -->
+  <!-- EXCLUSIVE LAUNCH COHORT -->
   <div class="section-title">Active Rollout Capacity</div>
   <p>
     This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
@@ -206,20 +229,31 @@
 
 </div>
 
-<!-- LIVE MOVING REVENUE ENGINE -->
+<!-- INTEGRATED DUAL-VELOCITY ENGINE -->
 <script>
-  let count = 142390.00;
-  const counterElement = document.getElementById('revenue-counter');
+  let salesCount = 158000.00;
+  let revenueCount = 3450098.00;
+  
+  const salesElement = document.getElementById('sales-counter');
+  const revenueElement = document.getElementById('revenue-counter');
   
   setInterval(() => {
-    // Simulates dynamic transaction recovery increments
-    const increment = Math.random() * 85 + 15; 
-    count += increment;
-    counterElement.innerText = count.toLocaleString('en-US', {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+    // Generates interconnected transaction velocity increments
+    const salesIncrement = Math.random() * 45 + 5;
+    const revenueMultiplier = Math.random() * 20 + 15;
+    const revenueIncrement = salesIncrement * revenueMultiplier;
+    
+    salesCount += salesIncrement;
+    revenueCount += revenueIncrement;
+    
+    salesElement.innerText = salesCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
     });
-  }, 950); // Accelerated velocity to show high-stature momentum
+    
+    revenueElement.innerText = revenueCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+  }, 1100);
 </script>
 
 </body>
