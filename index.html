@@ -20,8 +20,21 @@
     
     /* LOGO AREA */
     .logo-wrapper {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       text-align: left;
+    }
+    
+    /* UPPER HIGH-URGENCY CTA */
+    .top-cta {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 40px;
+      border-left: 6px solid #000000;
+      padding-left: 15px;
+      line-height: 1.2;
     }
     
     /* MONSTER TYPOGRAPHY FOR OPENAI IMPACT */
@@ -184,19 +197,24 @@
     <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
   </div>
 
+  <!-- TARGETED TOP-LEVEL CTA -->
+  <div class="top-cta">
+    “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
+  </div>
+
   <!-- MASSIVE TYPOGRAPHY FOR OPENAI IMPACT -->
   <h1 class="hero-brand">OPENAI</h1>
   <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
   
-  <!-- SIDE-BY-SIDE SIDE LAYOUT WITH DUAL COLOR LOGIC -->
+  <!-- SIDE-BY-SIDE SIDE LAYOUT WITH SCALE-APPROPRIATE BILLION-DOLLAR ENTERPRISE VELOCITY -->
   <div class="transformation-dashboard">
     <div class="metric-column">
       <div class="counter-label">The Sales Recovered In Real-Time:</div>
-      <div class="counter-box black-type">$<span id="sales-counter">158,000.00</span></div>
+      <div class="counter-box black-type">$<span id="sales-counter">2,418,500.00</span></div>
     </div>
     <div class="metric-column right-align">
       <div class="counter-label">The Revenue Restored:</div>
-      <div class="counter-box green-type">$<span id="revenue-counter">3,450,098.00</span></div>
+      <div class="counter-box green-type">$<span id="revenue-counter">52,734,110.00</span></div>
     </div>
   </div>
   
@@ -260,17 +278,19 @@
 
 </div>
 
-<!-- INTEGRATED DUAL-VELOCITY ENGINE -->
+<!-- INTEGRATED HIGH-VELOCITY MULTI-BILLION BILLING COUNTER ENGINE -->
 <script>
-  let salesCount = 158000.00;
-  let revenueCount = 3450098.00;
+  // Initialized at enterprise scale markers
+  let salesCount = 2418500.00;
+  let revenueCount = 52734110.00;
   
   const salesElement = document.getElementById('sales-counter');
   const revenueElement = document.getElementById('revenue-counter');
   
   setInterval(() => {
-    const salesIncrement = Math.random() * 45 + 5;
-    const revenueMultiplier = Math.random() * 20 + 15;
+    // Simulates continuous enterprise scale transaction intercept volume
+    const salesIncrement = Math.random() * 850 + 150; 
+    const revenueMultiplier = Math.random() * 25 + 20;
     const revenueIncrement = salesIncrement * revenueMultiplier;
     
     salesCount += salesIncrement;
@@ -283,7 +303,7 @@
     revenueElement.innerText = revenueCount.toLocaleString('en-US', {
       minimumFractionDigits: 2, maximumFractionDigits: 2
     });
-  }, 1100);
+  }, 900); // Higher refresh cadence to mirror real-time sub-second infrastructure
 </script>
 
 </body>
