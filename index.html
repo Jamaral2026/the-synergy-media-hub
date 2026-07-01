@@ -1,276 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Synergy Media HUB - Live Demo</title>
-    <style>
-        html, body {
-            background-color: #0d0d0d;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #ffffff;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            padding: 60px 20px;
-        }
-        .container {
-            max-width: 850px;
-            width: 100%;
-        }
-        .logo-container {
-            margin-bottom: 50px;
-        }
-        .logo-container img {
-            max-height: 45px;
-        }
-        .quote {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #a6a6a6;
-            margin-bottom: 40px;
-            border-left: 3px solid #0052cc;
-            padding-left: 20px;
-            line-height: 1.5;
-        }
-        .brand-title {
-            font-size: 2.8rem;
-            font-weight: 300;
-            margin: 0 0 10px 0;
-            letter-spacing: 1px;
-        }
-        .brand-subtitle {
-            font-size: 1.15rem;
-            font-weight: 300;
-            color: #b3b3b3;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-        }
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        .metric-box {
-            background: #141414;
-            padding: 25px;
-            border-radius: 6px;
-            border: 1px solid #222222;
-        }
-        .metric-label {
-            font-size: 0.85rem;
-            color: #8c8c8c;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #00b074;
-        }
-        .paradigm-shift {
-            margin-bottom: 35px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        .paradigm-shift span {
-            display: block;
-        }
-        .paradigm-shift span:first-child {
-            color: #737373;
-            text-decoration: line-through;
-        }
-        .paradigm-shift span:last-child {
-            color: #ffffff;
-            font-weight: 600;
-        }
-        .description {
-            color: #d9d9d9;
-            line-height: 1.7;
-            font-size: 1.05rem;
-            margin-bottom: 40px;
-        }
-        .section-heading {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 50px 0 20px 0;
-            text-transform: uppercase;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        .alert-box {
-            background: #211515;
-            border-left: 4px solid #de350b;
-            padding: 25px;
-            margin: 45px 0;
-            color: #ffbdad;
-            line-height: 1.6;
-            border-radius: 0 6px 6px 0;
-        }
-        .investment-card {
-            background: #141414;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 6px;
-            border: 1px solid #222222;
-        }
-        .investment-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-        .investment-price {
-            font-size: 1.1rem;
-            color: #ff5252;
-            font-weight: 600;
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-        .investment-desc {
-            color: #cccccc;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        .cta-box {
-            margin-top: 65px;
-            padding: 40px 30px;
-            background: #0f1624;
-            border: 1px solid #1e2d4a;
-            border-radius: 6px;
-            text-align: center;
-        }
-        .cta-text {
-            font-size: 1.15rem;
-            margin-bottom: 25px;
-            color: #e6efff;
-            line-height: 1.6;
-        }
-        .cta-email {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #4c9aff;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-        .cta-trigger {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 3px;
-            margin-top: 20px;
-        }
-        @media (max-width: 600px) {
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-            body {
-                padding: 30px 15px;
-            }
-            .brand-title {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Synergy Media HUB | Conscious Clients Constructing</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.4;
+      margin: 0;
+      padding: 80px 24px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* LOGO AREA */
+    .logo-wrapper {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    
+    /* UPPER HIGH-URGENCY CTA */
+    .top-cta {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 40px;
+      border-left: 6px solid #000000;
+      padding-left: 15px;
+      line-height: 1.2;
+    }
+    
+    /* REFINED PREMIUM LIGHT TYPOGRAPHY WITH TITLE CASE */
+    .hero-brand {
+      font-size: clamp(6rem, 18vw, 13rem);
+      font-weight: 300; /* STRIPPED BOLD - CONVERTED TO CLEAN LIGHT WEIGHT */
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-transform: none; /* FORCES UPPER AND LOWER CASE */
+      margin: 0 0 25px 0;
+    }
+    
+    .hero-stat {
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      font-weight: 300; /* STRIPPED BOLD - CONVERTED TO CLEAN LIGHT WEIGHT */
+      color: #333333;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 55px;
+    }
+
+    /* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
+    .transformation-dashboard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      margin: 0 0 70px 0;
+      border-top: 4px solid #000000;
+      border-bottom: 4px solid #000000;
+      padding: 35px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .metric-column {
+      flex: 1;
+    }
+    .metric-column.right-align {
+      text-align: right;
+    }
+    
+    .counter-label {
+      font-size: 1.38rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #333333;
+      margin-bottom: 12px;
+    }
+    
+    .counter-box {
+      font-size: clamp(2.0rem, 5.8vw, 4.15rem);
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .counter-box.black-type {
+      color: #000000;
+    }
+    .counter-box.green-type {
+      color: #009933;
+    }
+    
+    /* TWO-LINE TRANSITION BLOCKS */
+    .headline-sub {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 50px;
+    }
+    .headline-sub span {
+      display: block;
+    }
+    
+    .section-title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #000000;
+      border-bottom: 4px solid #000000;
+      padding-bottom: 10px;
+      margin-top: 70px;
+      margin-bottom: 30px;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 1.55rem;
+      color: #111111;
+      margin-bottom: 35px;
+      font-weight: 400;
+    }
+    
+    /* INVESTMENT SECTIONS AND ACTION DETAILS */
+    .investment-tier {
+      margin-bottom: 50px;
+      padding-left: 25px;
+      border-left: 5px solid #000000;
+    }
+    .investment-name {
+      font-size: 1.75rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .investment-cost {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+    .investment-desc {
+      color: #222222;
+      font-size: 1.35rem;
+    }
+
+    .tariff-note {
+      background-color: #f5f5f5;
+      border: 2px solid #000000;
+      padding: 30px;
+      margin-top: 45px;
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: #000000;
+    }
+    .tariff-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .action-block {
+      margin-top: 60px;
+      padding: 30px 0;
+      border-top: 2px dashed #000000;
+    }
+    .action-email {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #000000;
+      margin-top: 15px;
+    }
+    .action-trigger {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #009933;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- Logo -->
-    <div class="logo-container">
-        <img src="logo.png" alt="The Synergy Media HUB Logo">
-    </div>
+  <!-- LOGO WRAPPER - VISUAL IMAGE ONLY -->
+  <div class="logo-wrapper">
+    <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
+  </div>
 
-    <!-- Quote Hook -->
-    <div class="quote">
-        “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
-    </div>
+  <!-- TARGETED TOP-LEVEL CTA -->
+  <div class="top-cta">
+    “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
+  </div>
 
-    <!-- Target Brand Title & Subtitle -->
-    <h1 class="brand-title">OpenAI</h1>
-    <div class="brand-subtitle">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
+  <!-- TITLED CASE + LIGHT STYLE DEPLOYED -->
+  <h1 class="hero-brand">OpenAI</h1>
+  <div class="hero-stat">83.1% of astray sales detected in milliseconds</div>
   
-    <!-- Real-Time Metrics Counters -->
-    <div class="metrics-grid">
-        <div class="metric-box">
-            <div class="metric-label">The Sales Recovered In Real-Time:</div>
-            <div class="metric-value">$4,585,300.00</div>
-        </div>
-        <div class="metric-box">
-            <div class="metric-label">The Revenue Restored:</div>
-            <div class="metric-value">$100,876,420.00</div>
-        </div>
+  <!-- DASHBOARD INSIDE CENTRAL CONTAINER WITH COMPACT COUNTERS -->
+  <div class="transformation-dashboard">
+    <div class="metric-column">
+      <div class="counter-label">The Sales Recovered In Real-Time:</div>
+      <div class="counter-box black-type">$<span id="sales-counter">4,585,300.00</span></div>
     </div>
+    <div class="metric-column right-align">
+      <div class="counter-label">The Revenue Restored:</div>
+      <div class="counter-box green-type">$<span id="revenue-counter">100,876,420.00</span></div>
+    </div>
+  </div>
   
-    <!-- Paradigm Shift Heading -->
-    <div class="paradigm-shift">
-        <span>Goodbye, Content Marketing.</span>
-        <span>Welcome to Content Clienting.</span>
-    </div>
+  <div class="headline-sub">
+    <span>Goodbye, Content Marketing.</span>
+    <span>Welcome to Content Clienting.</span>
+  </div>
 
-    <!-- Core Methodology Description -->
-    <p class="description">
-        Conscious Clients Constructing. The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action. Isolating code-level drop-off leaks at the payment gateway instantly. In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow. And converts those aborted sessions into cleared bank assets before the browser tab closes.
-    </p>
+  <p>
+    Conscious Clients Constructing. The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action. Isolating code-level drop-off leaks at the payment gateway instantly. In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow. And converts those aborted sessions into cleared bank assets before the browser tab closes.
+  </p>
 
-    <!-- Operational Subsection -->
-    <div class="section-heading">Real-Time Revenue Realignment</div>
-    <p class="description">
-        Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.
-    </p>
+  <div class="section-title">Real-Time Revenue Realignment</div>
+  <p>
+    Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.
+  </p>
 
-    <!-- Operational Constraints -->
-    <div class="section-heading">Active Rollout Capacity</div>
-    <p class="description">
-        This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
-    </p>
+  <div class="section-title">Active Rollout Capacity</div>
+  <p>
+    This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
+  </p>
 
-    <!-- Critical Tariff Notification -->
-    <div class="alert-box">
-        <strong>CRITICAL TARIFF NOTE:</strong> Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
-    </div>
+  <div class="tariff-note">
+    <span class="tariff-title">CRITICAL TARIFF NOTE:</span>
+    Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
+  </div>
 
-    <!-- Value Pathway Deployments -->
-    <div class="section-heading">Corporate Investment Pathways</div>
-    <p class="description">
-        Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
-    </p>
+  <div class="section-title">Corporate Investment Pathways</div>
+  <p>
+    Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
+  </p>
 
-    <!-- Option 1 -->
-    <div class="investment-card">
-        <div class="investment-title">The Global Enterprise Deep Diagnosis</div>
-        <div class="investment-price">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
-        <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
-    </div>
+  <div class="investment-tier">
+    <div class="investment-name">The Global Enterprise Deep Diagnosis</div>
+    <div class="investment-cost">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
+    <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
+  </div>
 
-    <!-- Option 2 -->
-    <div class="investment-card">
-        <div class="investment-title">Continuous Ledger Subscription</div>
-        <div class="investment-price">$3,500.00 / month (Secure Automated Billing)</div>
-        <div class="investment-desc">Maintaining non-stop transaction intercept protocols across checkout networks via automated 30-day background alignment cycles, processed through secure payment application.</div>
-    </div>
+  <div class="investment-tier">
+    <div class="investment-name">Continuous Ledger Subscription</div>
+    <div class="investment-cost">$3,500.00 / month (Secure Automated Billing)</div>
+    <div class="investment-desc">Maintaining non-stop transaction intercept protocols across checkout networks via automated 30-day background alignment cycles, processed through secure payment application.</div>
+  </div>
 
-    <!-- Option 3 -->
-    <div class="investment-card">
-        <div class="investment-title">Supersonic AIGNITOR Enterprise Scale</div>
-        <div class="investment-price">$7,500.00 / month (Secure Automated Billing)</div>
-        <div class="investment-desc">Delivering sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000 monthly, deployed via secure payment application.</div>
-    </div>
+  <div class="investment-tier">
+    <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
+    <div class="investment-cost">$7,500.00 / month (Secure Automated Billing)</div>
+    <div class="investment-desc">Delivering sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000 monthly, deployed via secure payment application.</div>
+  </div>
 
-    <!-- Action Intake Channel -->
-    <div class="cta-box">
-        <div class="cta-text">To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</div>
-        <div class="cta-email">Direct Transmission: amaral@thesynergymedia.net</div>
-        <div class="cta-trigger">Just reply to the email address above with the single word: IGNITE</div>
-    </div>
+  <div class="action-block">
+    <p>To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</p>
+    <div class="action-email">Direct Transmission: amaral@thesynergymedia.net</div>
+    <div class="action-trigger">Just reply to the email address above with the single word: IGNITE</div>
+  </div>
 
 </div>
+
+<script>
+  let salesCount = 4585300.00;
+  let revenueCount = 100876420.00;
+  
+  const salesElement = document.getElementById('sales-counter');
+  const revenueElement = document.getElementById('revenue-counter');
+  
+  setInterval(() => {
+    const salesIncrement = Math.random() * 850 + 150; 
+    const revenueMultiplier = Math.random() * 25 + 20;
+    const revenueIncrement = salesIncrement * revenueMultiplier;
+    
+    salesCount += salesIncrement;
+    revenueCount += revenueIncrement;
+    
+    salesElement.innerText = salesCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+    
+    revenueElement.innerText = revenueCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+  }, 900);
+</script>
 
 </body>
 </html>
