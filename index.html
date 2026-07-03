@@ -1,39 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI Live Simulation Demo | The Synergy Media HUB</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Synergy Media HUB | Conscious Clients Constructing</title>
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.4;
+      margin: 0;
+      padding: 80px 24px;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    /* LOGO AREA */
+    .logo-wrapper {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    
+    /* UPPER HIGH-URGENCY CTA */
+    .top-cta {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 40px;
+      border-left: 6px solid #000000;
+      padding-left: 15px;
+      line-height: 1.2;
+    }
+    
+    /* REFINED PREMIUM LIGHT TYPOGRAPHY WITH TITLE CASE */
+    .hero-brand {
+      font-size: clamp(6rem, 18vw, 13rem);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-transform: none;
+      margin: 0 0 25px 0;
+    }
+    
+    .hero-stat {
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      font-weight: 300;
+      color: #333333;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 55px;
+    }
+
+    /* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
+    .transformation-dashboard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      margin: 0 0 70px 0;
+      border-top: 4px solid #000000;
+      border-bottom: 4px solid #000000;
+      padding: 35px 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .metric-column {
+      flex: 1;
+    }
+    .metric-column.right-align {
+      text-align: right;
+    }
+    
+    .counter-label {
+      font-size: 1.38rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #333333;
+      margin-bottom: 12px;
+    }
+    
+    .counter-box {
+      font-size: clamp(2.0rem, 5.8vw, 4.15rem);
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .counter-box.black-type {
+      color: #000000;
+    }
+    .counter-box.green-type {
+      color: #009933;
+    }
+    
+    /* TWO-LINE TRANSITION BLOCKS */
+    .headline-sub {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #000000;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 50px;
+    }
+    .headline-sub span {
+      display: block;
+    }
+    
+    .section-title {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #000000;
+      border-bottom: 4px solid #000000;
+      padding-bottom: 10px;
+      margin-top: 70px;
+      margin-bottom: 30px;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 1.55rem;
+      color: #111111;
+      margin-bottom: 35px;
+      font-weight: 400;
+    }
+    
+    /* INVESTMENT SECTIONS AND ACTION DETAILS */
+    .investment-tier {
+      margin-bottom: 50px;
+      padding-left: 25px;
+      border-left: 5px solid #000000;
+    }
+    .investment-name {
+      font-size: 1.75rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .investment-cost {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+    .investment-desc {
+      color: #222222;
+      font-size: 1.35rem;
+    }
+
+    .tariff-note {
+      background-color: #f5f5f5;
+      border: 2px solid #000000;
+      padding: 30px;
+      margin-top: 45px;
+      font-size: 1.35rem;
+      line-height: 1.45;
+      color: #000000;
+    }
+    .tariff-title {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .action-block {
+      margin-top: 60px;
+      padding: 30px 0;
+      border-top: 2px dashed #000000;
+    }
+    .action-email {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #000000;
+      margin-top: 15px;
+    }
+    .action-trigger {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #009933;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #060814; color: #f0f4f8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+<body>
 
-    <!-- THE LIVE INTERACTIVE SIMULATION BOX -->
-    <div style="width: 100%; max-width: 860px; margin: 20px; background-color: #020617; border: 1px solid #1e293b; border-radius: 8px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5); overflow: hidden; box-sizing: border-box;">
-        
-        <!-- TERMINAL HEADER BAR -->
-        <div style="background-color: #0f172a; border-bottom: 1px solid #1e293b; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
-            <div style="display: flex; gap: 8px;">
-                <span style="width: 12px; height: 12px; background-color: #ef4444; border-radius: 50%; display: inline-block;"></span>
-                <span style="width: 12px; height: 12px; background-color: #eab308; border-radius: 50%; display: inline-block;"></span>
-                <span style="width: 12px; height: 12px; background-color: #22c55e; border-radius: 50%; display: inline-block;"></span>
-            </div>
-            <div style="font-family: monospace; font-size: 13px; color: #64748b; letter-spacing: 0.5px;">
-                OpenAI_TARGET_INSTANCE // LIVE_DEMO
-            </div>
-        </div>
+<div class="container">
 
-        <!-- LIVE STREAM TERMINAL BODY -->
-        <div style="padding: 35px; font-family: 'Courier New', Courier, monospace; font-size: 16px; line-height: 1.8; color: #38bdf8; box-sizing: border-box;">
-            <p style="margin: 0 0 10px 0;"><span style="color: #64748b;">[SYSTEM]:</span> Initializing Global Enterprise Architecture Audit...</p>
-            <p style="margin: 0 0 10px 0;"><span style="color: #64748b;">[STATUS]:</span> Intercepting baseline leakage metrics at final checkout processing nodes for OpenAI layout specs.</p>
-            <p style="margin: 0 0 10px 0; color: #ef4444;"><span style="color: #64748b;">[ALERT]:</span> 83% transaction loss detected within standard validation layouts.</p>
-            <p style="margin: 0 0 15px 0; color: #22c55e;"><span style="color: #64748b;">[ACTION]:</span> Activating Conscious Clients Constructing re-alignment instrument...</p>
-            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #1e293b; color: #64748b; font-size: 14px;">
-                // Connection secure. Monitored via The Supersonic Revenue Recovery AIGNITOR.
-            </div>
-        </div>
+  <div class="logo-wrapper">
+    <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
+  </div>
 
+  <div class="top-cta">
+    “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
+  </div>
+
+  <h1 class="hero-brand">OpenAI</h1>
+  <div class="hero-stat">83.1% of astray sales detected in milliseconds</div>
+  
+  <div class="transformation-dashboard">
+    <div class="metric-column">
+      <div class="counter-label">The Sales Recovered In Real-Time:</div>
+      <div class="counter-box black-type">$<span id="sales-counter">4,585,300.00</span></div>
     </div>
+    <div class="metric-column right-align">
+      <div class="counter-label">The Revenue Restored:</div>
+      <div class="counter-box green-type">$<span id="revenue-counter">100,876,420.00</span></div>
+    </div>
+  </div>
+  
+  <div class="headline-sub">
+    <span>Goodbye, Content Marketing.</span>
+    <span>Welcome to Content Clienting.</span>
+  </div>
+
+  <p>
+    Conscious Clients Constructing. The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action. Isolating code-level drop-off leaks at the payment gateway instantly. In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow. And converts those aborted sessions into cleared bank assets before the browser tab closes.
+  </p>
+
+  <div class="section-title">Real-Time Revenue Realignment</div>
+  <p>
+    Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.
+  </p>
+
+  <div class="section-title">Active Rollout Capacity</div>
+  <p>
+    This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
+  </p>
+
+  <div class="tariff-note">
+    <span class="tariff-title">CRITICAL TARIFF NOTE:</span>
+    Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
+  </div>
+
+  <div class="section-title">Corporate Investment Pathways</div>
+  <p>
+    Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
+  </p>
+
+  <div class="investment-tier">
+    <div class="investment-name">The Global Enterprise Deep Diagnosis</div>
+    <div class="investment-cost">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
+    <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
+  </div>
+
+  <div class="investment-tier">
+    <div class="investment-name">Continuous Ledger Subscription</div>
+    <div class="investment-cost">$3,500.00 / month (Secure Automated Billing)</div>
+    <div class="investment-desc">Maintaining non-stop transaction intercept protocols across checkout networks via automated 30-day background alignment cycles, processed through secure payment application.</div>
+  </div>
+
+  <div class="investment-tier">
+    <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
+    <div class="investment-cost">$7,500.00 / month (Secure Automated Billing)</div>
+    <div class="investment-desc">Delivering sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000 monthly, deployed via secure payment application.</div>
+  </div>
+
+  <div class="action-block">
+    <p>To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</p>
+    <div class="action-email">Direct Transmission: amaral@thesynergymedia.net</div>
+    <div class="action-trigger">Just reply to the email address above with the single word: IGNITE</div>
+  </div>
+
+</div>
+
+<script>
+  let salesCount = 4585300.00;
+  let revenueCount = 100876420.00;
+  
+  const salesElement = document.getElementById('sales-counter');
+  const revenueElement = document.getElementById('revenue-counter');
+  
+  setInterval(() => {
+    const salesIncrement = Math.random() * 850 + 150; 
+    const revenueMultiplier = Math.random() * 25 + 20;
+    const revenueIncrement = salesIncrement * revenueMultiplier;
+    
+    salesCount += salesIncrement;
+    revenueCount += revenueIncrement;
+    
+    salesElement.innerText = salesCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+    
+    revenueElement.innerText = revenueCount.toLocaleString('en-US', {
+      minimumFractionDigits: 2, maximumFractionDigits: 2
+    });
+  }, 900);
+</script>
 
 </body>
 </html>
