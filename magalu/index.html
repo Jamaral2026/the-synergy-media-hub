@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimulaFLUX - Live Demo Magalu</title>
+    <!-- Tailwind CSS para Design Executivo -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.98); }
+        }
+        .evaporando { animation: pulse-red 1.5s infinite; }
+        .log-entry { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
+    <!-- Header -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <span class="text-sm font-bold tracking-widest text-blue-500 uppercase">SimulaFLUX</span>
+            <span class="text-slate-500">|</span>
+            <span class="text-xs font-semibold uppercase bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">Parceria Tecnológica GEMINI (Google IA)</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
+            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Operação Ativa</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Painel de Controle e Métricas Principais -->
+        <div class="lg:col-span-1 flex flex-col gap-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between h-full">
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight mb-2">Re-Engenharia Supersônica</h1>
+                    <p class="text-sm text-slate-400 mb-6">Monitoramento de receita ameaçada pré-checkout (Magazine Luiza).</p>
+                    
+                    <!-- Indicador Alvo Principal -->
+                    <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 mb-4">
+                        <div class="text-xs font-medium uppercase tracking-wider text-slate-500 mb-1">Meta Anual Validada</div>
+                        <div class="text-2xl font-black text-blue-400">R$ 1,24 Bilhão <span class="text-sm font-normal text-slate-400">(3,4%)</span></div>
+                    </div>
+
+                    <!-- Acumulador em Tempo Real -->
+                    <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+                        <div class="text-xs font-medium uppercase tracking-wider text-emerald-500 mb-1">Receita Recuperada Nesta Demo</div>
+                        <div id="total-recuperado" class="text-3xl font-mono font-bold text-emerald-400">R$ 0,00</div>
+                    </div>
+                </div>
+
+                <!-- Botão Interativo para Ativação Definitiva -->
+                <div class="mt-8 pt-6 border-t border-slate-800">
+                    <button onclick="ativarClique()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold uppercase tracking-wider text-sm py-4 px-6 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/10 active:scale-[0.99]">
+                        Consolidar Ganhos (Ativação)
+                    </button>
+                    <p class="text-[11px] text-center text-slate-500 mt-3 font-mono">Janela de oportunidade exclusiva: 03 Dias</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monitor de Escapamento de Fluxo e Monitoramento Real-Time -->
+        <div class="lg:col-span-2 grid grid-rows-2 gap-6">
+            
+            <!-- Linha de Fluxo Transacional Visual -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Status do Funil Pré-Checkout</h2>
+                        <span class="text-xs font-mono text-slate-500">Milissegundos antes do clique final</span>
+                    </div>
+                    
+                    <!-- Gráfico/Esteira de Fluxo Humano-AI -->
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
+                            <div class="text-xs text-slate-500 font-medium uppercase mb-1">Intenção Ativa</div>
+                            <div id="status-intencao" class="text-lg font-mono font-bold text-blue-400">Analisando...</div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 evaporando border-red-900/50 bg-red-950/10">
+                            <div class="text-xs text-red-400 font-medium uppercase mb-1">Ameaça / Abandono</div>
+                            <div id="status-ameaca" class="text-lg font-mono font-bold text-red-400">R$ 0,00</div>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 border-emerald-900/50 bg-emerald-950/10">
+                            <div class="text-xs text-emerald-400 font-medium uppercase mb-1">Intervenção Integrada</div>
+                            <div id="status-intervencao" class="text-lg font-mono font-bold text-emerald-400">0ms</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barra de eficiência dinâmica -->
+                <div class="mt-4 bg-slate-950 rounded-full h-3 overflow-hidden p-0.5 border border-slate-800">
+                    <div id="progresso-eficiencia" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full rounded-full transition-all duration-500" style="width: 3.4%"></div>
+                </div>
+                <div class="flex justify-between items-center text-[11px] text-slate-500 font-mono mt-2">
+                    <span>Nível Conservador: 3,4%</span>
+                    <span>Nível Avançado: 5,8%</span>
+                </div>
+            </div>
+
+            <!-- Log de Transações em Tempo Real -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col overflow-hidden">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Registro de Resgates Ininterruptos</h2>
+                <div id="log-transacoes" class="flex-1 font-mono text-xs overflow-y-auto space-y-2 pr-2 custom-scrollbar">
+                    <!-- Logs entram via JS aqui -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-4 text-center text-xs text-slate-600 font-mono">
+        Dujan Media & SimulaFLUX © 2026. Todos os direitos reservados.
+    </footer>
+
+    <!-- Lógica de Simulação Técnica Real-Time -->
+    <script>
+        let totalAcumulado = 0;
+        const logContainer = document.getElementById('log-transacoes');
+        const totalElement = document.getElementById('total-recuperado');
+        const statusIntencao = document.getElementById('status-intencao');
+        const statusAmeaca = document.getElementById('status-ameaca');
+        const statusIntervencao = document.getElementById('status-intervencao');
+        const barraProgresso = document.getElementById('progresso-eficiencia');
+
+        // Formatação de Moeda Brasileira
+        function formatarBRL(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        // Simula comportamentos de fricção reais em um e-commerce do tamanho da Magalu
+        const motivosAmeaca = [
+            "Fricção oculta no processamento do Gateway",
+            "Hesitação por latência crítica no carregamento do Pix",
+            "Micro-atrito em validação de token antifraude",
+            "Falha silenciosa de resposta da API de frete",
+            "Abandono interrupção de rota de pagamento secundária"
+        ];
+
+        function gerarTransacao() {
+            // Valores proporcionais ao tráfego real de alta escala da empresa
+            const ticketMedio = Math.floor(Math.random() * (4500 - 150) + 150); 
+            const motivo = motivosAmeaca[Math.floor(Math.random() * motivosAmeaca.length)];
+            const milissegundosResposta = Math.floor(Math.random() * (28 - 4) + 4);
+
+            // Atualiza status dos cards de fluxo instantâneo
+            statusIntencao.innerText = formatarBRL(ticketMedio);
+            statusAmeaca.innerText = formatarBRL(ticketMedio);
+            statusIntervencao.innerText = `${milissegundosResposta}ms`;
+
+            // Soma ao acumulado da Demo
+            totalAcumulado += ticketMedio;
+            totalElement.innerText = formatarBRL(totalAcumulado);
+
+            // Controla oscilação sutil visual da barra de eficiência baseada no ritmo
+            const eficienciaOscilante = (Math.random() * (5.8 - 3.4) + 3.4).toFixed(1);
+            barraProgresso.style.width = `${(eficienciaOscilante / 5.8) * 100}%`;
+
+            // Cria linha de registro no log técnico
+            const novaLinha = document.createElement('div');
+            novaLinha.className = 'log-entry flex justify-between items-center bg-slate-950/80 border border-slate-850 p-2.5 rounded-lg text-slate-300';
+            novaLinha.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    <span class="text-slate-500">[${new Date().toLocaleTimeString()}]</span>
+                    <span class="text-red-400/90 font-medium">${motivo} Interceptado</span>
+                </div>
+                <div class="text-right">
+                    <span class="text-emerald-400 font-bold font-mono">+ ${formatarBRL(ticketMedio)}</span>
+                    <span class="text-[10px] text-slate-500 block">Salvo em ${milissegundosResposta}ms</span>
+                </div>
+            `;
+
+            // Insere no topo do log
+            logContainer.insertBefore(novaLinha, logContainer.firstChild);
+
+            // Limita o número de logs na tela para manter a performance da Demo limpa
+            if (logContainer.children.length > 20) {
+                logContainer.removeChild(logContainer.lastChild);
+            }
+        }
+
+        // Executa a re-engenharia em loops contínuos simulando transações em lote
+        setInterval(gerarTransacao, 1800);
+
+        // Feedback visual ao clicar no botão de fechamento/ativação
+        function activarClique() {
+            alert(`Simulação Pronta.\nPróximo Passo: Integração de Chave da API Magalu para início do tracking em ambiente produtivo.`);
+        }
+    </script>
+</body>
+</html>
