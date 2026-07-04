@@ -4,121 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimulaFLUX - Live Demo Magalu</title>
-    <!-- Tailwind CSS para Design Executivo -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        @keyframes pulse-red {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.98); }
+        /* Estilos Base - Foco em Contraste Alto e Leitura Limpa */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: #020617; 
+            color: #f8fafc; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-content: space-between;
+            flex-direction: column;
         }
-        .evaporando { animation: pulse-red 1.5s infinite; }
-        .log-entry { animation: fadeIn 0.3s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Topo da Página */
+        header {
+            background-color: #0f172a;
+            border-b: 1px solid #1e293b;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1e293b;
+        }
+        .header-title { font-size: 14px; font-weight: bold; tracking-letter: 0.1em; color: #3b82f6; text-transform: uppercase; letter-spacing: 1px; }
+        .header-badge { font-size: 11px; background-color: #1e293b; color: #cbd5e1; padding: 4px 10px; rounded-radius: 9999px; border-radius: 20px; font-weight: 600; margin-left: 12px; }
+        .status-container { display: flex; align-items: center; gap: 8px; font-size: 11px; font-family: monospace; text-transform: uppercase; color: #94a3b8; }
+        .ping-green { width: 10px; h-width: 10px; height: 10px; background-color: #10b981; border-radius: 50%; display: inline-block; }
+
+        /* Estrutura Principal */
+        main {
+            flex: 1;
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1s;
+            gap: 24px;
+        }
+        @media (min-width: 1024px) {
+            main { grid-template-columns: 1fr 2fr; }
+        }
+
+        /* Cartões Executivos */
+        .card { background-color: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: #ffffff; }
+        .card-subtitle { font-size: 13px; color: #94a3b8; margin-bottom: 24px; line-height: 1.4; }
+        
+        /* Indicadores Financeiros Magnificados */
+        .metric-box { background-color: #020617; border: 1px solid #334155; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+        .metric-label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #64748b; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .metric-value-blue { font-size: 26px; font-weight: 900; color: #60a5fa; font-family: monospace; }
+        .metric-value-green { font-size: 32px; font-weight: bold; color: #34d399; font-family: monospace; }
+
+        /* Botão de Ativação */
+        .btn-activation { width: 100%; background-color: #10b981; color: #020617; font-weight: bold; text-transform: uppercase; padding: 16px; border: none; border-radius: 12px; cursor: pointer; font-size: 14px; letter-spacing: 1px; transition: background 0.2s; margin-top: 16px; }
+        .btn-activation:hover { background-color: #059669; }
+        .btn-note { font-size: 11px; font-family: monospace; text-align: center; color: #475569; margin-top: 12px; }
+
+        /* Painéis Laterais Dinâmicos */
+        .right-layout { display: flex; flex-direction: column; gap: 24px; }
+        .funnel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px; }
+        .funnel-box { background-color: #020617; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; text-align: center; }
+        .funnel-box.alert { border-color: #991b1b; background-color: rgba(153, 27, 27, 0.1); animation: pulse-red 2s infinite; }
+        .funnel-box.success { border-color: #065f46; background-color: rgba(6, 95, 70, 0.1); }
+        .funnel-box-value { font-size: 16px; font-weight: bold; font-family: monospace; margin-top: 6px; }
+        
+        @keyframes pulse-red {
+            0%, 100% { border-color: #991b1b; }
+            50% { border-color: #ef4444; }
+        }
+
+        /* Barra de Eficiência */
+        .progress-container { background-color: #020617; border: 1px solid #1e293b; border-radius: 9999px; height: 14px; padding: 2px; margin-top: 16px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #3b82f6, #10b981); height: 100%; border-radius: 9999px; width: 3.4%; transition: width 0.5s ease; }
+
+        /* Log de Transações */
+        .log-container { flex: 1; min-height: 200px; background-color: #020617; border: 1px solid #1e293b; border-radius: 12px; padding: 16px; font-family: monospace; font-size: 12px; overflow-y: auto; max-height: 280px; }
+        .log-entry { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #1e293b; background-color: rgba(15, 23, 42, 0.4); margin-bottom: 6px; border-radius: 6px; }
+        .log-left { display: flex; align-items: center; gap: 8px; }
+        .log-dot { width: 6px; height: 6px; background-color: #10b981; border-radius: 50%; }
+        .log-time { color: #64748b; }
+        .log-text { color: #f1f5f9; }
+        .log-val { color: #34d399; font-weight: bold; }
+
+        footer { border-top: 1px solid #1e293b; background-color: #020617; padding: 16px; text-align: center; font-size: 11px; font-family: monospace; color: #475569; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+<body>
 
     <!-- Header -->
-    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <span class="text-sm font-bold tracking-widest text-blue-500 uppercase">SimulaFLUX</span>
-            <span class="text-slate-500">|</span>
-            <span class="text-xs font-semibold uppercase bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full">Parceria Tecnológica GEMINI (Google IA)</span>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <span class="header-title">SimulaFLUX</span>
+            <span class="header-badge">Parceria Tecnológica GEMINI (Google IA)</span>
         </div>
-        <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
-            <span class="text-xs font-mono text-slate-400 uppercase tracking-wider">Operação Ativa</span>
+        <div class="status-container">
+            <span class="ping-green"></span>
+            <span>Operação Ativa</span>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Painel de Controle e Métricas Principais -->
-        <div class="lg:col-span-1 flex flex-col gap-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between h-full">
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight mb-2">Re-Engenharia Supersônica</h1>
-                    <p class="text-sm text-slate-400 mb-6">Monitoramento de receita ameaçada pré-checkout (Magazine Luiza).</p>
-                    
-                    <!-- Indicador Alvo Principal -->
-                    <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 mb-4">
-                        <div class="text-xs font-medium uppercase tracking-wider text-slate-500 mb-1">Meta Anual Validada</div>
-                        <div class="text-2xl font-black text-blue-400">R$ 1,24 Bilhão <span class="text-sm font-normal text-slate-400">(3,4%)</span></div>
-                    </div>
-
-                    <!-- Acumulador em Tempo Real -->
-                    <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
-                        <div class="text-xs font-medium uppercase tracking-wider text-emerald-500 mb-1">Receita Recuperada Nesta Demo</div>
-                        <div id="total-recuperado" class="text-3xl font-mono font-bold text-emerald-400">R$ 0,00</div>
-                    </div>
+    <main>
+        <!-- Painel Esquerdo -->
+        <div class="card">
+            <div>
+                <h1 class="card-title">Re-Engenharia Supersônica</h1>
+                <p class="card-subtitle">Monitoramento de receita ameaçada pré-checkout (Magazine Luiza).</p>
+                
+                <div class="metric-box">
+                    <div class="metric-label">Meta Anual Validada</div>
+                    <div class="metric-value-blue">R$ 1,24 Bilhão <span style="font-size: 14px; color: #94a3b8; font-weight: normal;">(3,4%)</span></div>
                 </div>
 
-                <!-- Botão Interativo para Ativação Definitiva -->
-                <div class="mt-8 pt-6 border-t border-slate-800">
-                    <button onclick="ativarClique()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold uppercase tracking-wider text-sm py-4 px-6 rounded-xl transition-all duration-200 shadow-lg shadow-emerald-500/10 active:scale-[0.99]">
-                        Consolidar Ganhos (Ativação)
-                    </button>
-                    <p class="text-[11px] text-center text-slate-500 mt-3 font-mono">Janela de oportunidade exclusiva: 03 Dias</p>
+                <div class="metric-box">
+                    <div class="metric-label" style="color: #34d399;">Receita Recuperada Nesta Demo</div>
+                    <div id="total-recuperado" class="metric-value-green">R$ 0,00</div>
                 </div>
+            </div>
+
+            <div>
+                <button onclick="ativarClique()" class="btn-activation">Consolidar Ganhos (Ativação)</button>
+                <div class="btn-note">Janela de oportunidade exclusiva: 03 Dias</div>
             </div>
         </div>
 
-        <!-- Monitor de Escapamento de Fluxo e Monitoramento Real-Time -->
-        <div class="lg:col-span-2 grid grid-rows-2 gap-6">
-            
-            <!-- Linha de Fluxo Transacional Visual -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400">Status do Funil Pré-Checkout</h2>
-                        <span class="text-xs font-mono text-slate-500">Milissegundos antes do clique final</span>
+        <!-- Painel Direito -->
+        <div class="right-layout">
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span class="metric-label" style="color: #94a3b8;">Status do Funil Pré-Checkout</span>
+                    <span style="font-size: 11px; font-family: monospace; color: #475569;">Milissegundos antes do clique final</span>
+                </div>
+                
+                <div class="funnel-grid">
+                    <div class="funnel-box">
+                        <div class="metric-label">Intenção Ativa</div>
+                        <div id="status-intencao" class="funnel-box-value" style="color: #60a5fa;">Analisando...</div>
                     </div>
-                    
-                    <!-- Gráfico/Esteira de Fluxo Humano-AI -->
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4">
-                            <div class="text-xs text-slate-500 font-medium uppercase mb-1">Intenção Ativa</div>
-                            <div id="status-intencao" class="text-lg font-mono font-bold text-blue-400">Analisando...</div>
-                        </div>
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 evaporando border-red-900/50 bg-red-950/10">
-                            <div class="text-xs text-red-400 font-medium uppercase mb-1">Ameaça / Abandono</div>
-                            <div id="status-ameaca" class="text-lg font-mono font-bold text-red-400">R$ 0,00</div>
-                        </div>
-                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 border-emerald-900/50 bg-emerald-950/10">
-                            <div class="text-xs text-emerald-400 font-medium uppercase mb-1">Intervenção Integrada</div>
-                            <div id="status-intervencao" class="text-lg font-mono font-bold text-emerald-400">0ms</div>
-                        </div>
+                    <div class="funnel-box alert">
+                        <div class="metric-label" style="color: #f87171;">Ameaça / Abandono</div>
+                        <div id="status-ameaca" class="funnel-box-value" style="color: #f87171;">R$ 0,00</div>
+                    </div>
+                    <div class="funnel-box success">
+                        <div class="metric-label" style="color: #34d399;">Intervenção</div>
+                        <div id="status-intervencao" class="funnel-box-value" style="color: #34d399;">0ms</div>
                     </div>
                 </div>
 
-                <!-- Barra de eficiência dinâmica -->
-                <div class="mt-4 bg-slate-950 rounded-full h-3 overflow-hidden p-0.5 border border-slate-800">
-                    <div id="progresso-eficiencia" class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full rounded-full transition-all duration-500" style="width: 3.4%"></div>
+                <div class="progress-container">
+                    <div id="progresso-eficiencia" class="progress-bar"></div>
                 </div>
-                <div class="flex justify-between items-center text-[11px] text-slate-500 font-mono mt-2">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; font-family: monospace; color: #475569; margin-top: 6px;">
                     <span>Nível Conservador: 3,4%</span>
                     <span>Nível Avançado: 5,8%</span>
                 </div>
             </div>
 
-            <!-- Log de Transações em Tempo Real -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col overflow-hidden">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Registro de Resgates Ininterruptos</h2>
-                <div id="log-transacoes" class="flex-1 font-mono text-xs overflow-y-auto space-y-2 pr-2 custom-scrollbar">
-                    <!-- Logs entram via JS aqui -->
+            <!-- Registro Técnico -->
+            <div class="card" style="flex: 1;">
+                <span class="metric-label" style="color: #94a3b8; margin-bottom: 12px;">Registro de Resgates Ininterruptos</span>
+                <div id="log-transacoes" class="log-container">
+                    <!-- Entradas JS -->
                 </div>
             </div>
-
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-950 px-6 py-4 text-center text-xs text-slate-600 font-mono">
+    <footer>
         Dujan Media & SimulaFLUX © 2026. Todos os direitos reservados.
     </footer>
 
-    <!-- Lógica de Simulação Técnica Real-Time -->
+    <!-- Lógica de Simulação Técnica -->
     <script>
         let totalAcumulado = 0;
         const logContainer = document.getElementById('log-transacoes');
@@ -128,69 +188,58 @@
         const statusIntervencao = document.getElementById('status-intervencao');
         const barraProgresso = document.getElementById('progresso-eficiencia');
 
-        // Formatação de Moeda Brasileira
         function formatarBRL(valor) {
             return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         }
 
-        // Simula comportamentos de fricção reais em um e-commerce do tamanho da Magalu
         const motivosAmeaca = [
             "Fricção oculta no processamento do Gateway",
             "Hesitação por latência crítica no carregamento do Pix",
             "Micro-atrito em validação de token antifraude",
             "Falha silenciosa de resposta da API de frete",
-            "Abandono interrupção de rota de pagamento secundária"
+            "Abandono e interrupção de rota de pagamento secundária"
         ];
 
         function gerarTransacao() {
-            // Valores proporcionais ao tráfego real de alta escala da empresa
             const ticketMedio = Math.floor(Math.random() * (4500 - 150) + 150); 
             const motivo = motivosAmeaca[Math.floor(Math.random() * motivosAmeaca.length)];
             const milissegundosResposta = Math.floor(Math.random() * (28 - 4) + 4);
 
-            // Atualiza status dos cards de fluxo instantâneo
             statusIntencao.innerText = formatarBRL(ticketMedio);
             statusAmeaca.innerText = formatarBRL(ticketMedio);
             statusIntervencao.innerText = `${milissegundosResposta}ms`;
 
-            // Soma ao acumulado da Demo
             totalAcumulado += ticketMedio;
             totalElement.innerText = formatarBRL(totalAcumulado);
 
-            // Controla oscilação sutil visual da barra de eficiência baseada no ritmo
             const eficienciaOscilante = (Math.random() * (5.8 - 3.4) + 3.4).toFixed(1);
             barraProgresso.style.width = `${(eficienciaOscilante / 5.8) * 100}%`;
 
-            // Cria linha de registro no log técnico
             const novaLinha = document.createElement('div');
-            novaLinha.className = 'log-entry flex justify-between items-center bg-slate-950/80 border border-slate-850 p-2.5 rounded-lg text-slate-300';
+            novaLinha.className = 'log-entry';
             novaLinha.innerHTML = `
-                <div class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-                    <span class="text-slate-500">[${new Date().toLocaleTimeString()}]</span>
-                    <span class="text-red-400/90 font-medium">${motivo} Interceptado</span>
+                <div class="log-left">
+                    <span class="log-dot"></span>
+                    <span class="log-time">[${new Date().toLocaleTimeString()}]</span>
+                    <span class="log-text">${motivo} Interceptado</span>
                 </div>
-                <div class="text-right">
-                    <span class="text-emerald-400 font-bold font-mono">+ ${formatarBRL(ticketMedio)}</span>
-                    <span class="text-[10px] text-slate-500 block">Salvo em ${milissegundosResposta}ms</span>
+                <div style="text-align: right;">
+                    <span class="log-val">+ ${formatarBRL(ticketMedio)}</span>
+                    <span style="font-size: 10px; color: #475569; display: block;">Salvo em ${milissegundosResposta}ms</span>
                 </div>
             `;
 
-            // Insere no topo do log
             logContainer.insertBefore(novaLinha, logContainer.firstChild);
 
-            // Limita o número de logs na tela para manter a performance da Demo limpa
-            if (logContainer.children.length > 20) {
+            if (logContainer.children.length > 15) {
                 logContainer.removeChild(logContainer.lastChild);
             }
         }
 
-        // Executa a re-engenharia em loops contínuos simulando transações em lote
         setInterval(gerarTransacao, 1800);
 
-        // Feedback visual ao clicar no botão de fechamento/ativação
-        function activarClique() {
-            alert(`Simulação Pronta.\nPróximo Passo: Integração de Chave da API Magalu para início do tracking em ambiente produtivo.`);
+        function ativarClique() {
+            alert("Simulação Pronta.\nPróximo Passo: Integração de Chave da API Magalu para início do tracking em ambiente produtivo.");
         }
     </script>
 </body>
