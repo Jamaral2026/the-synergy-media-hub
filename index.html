@@ -1,303 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Synergy Media HUB | Conscious Clients Constructing</title>
-  <style>
-    body {
-      background-color: #ffffff;
-      color: #000000;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.4;
-      margin: 0;
-      padding: 80px 24px;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    
-    /* LOGO AREA */
-    .logo-wrapper {
-      margin-bottom: 30px;
-      text-align: left;
-    }
-    
-    /* UPPER HIGH-URGENCY CTA */
-    .top-cta {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000000;
-      margin-bottom: 40px;
-      border-left: 6px solid #000000;
-      padding-left: 15px;
-      line-height: 1.2;
-    }
-    
-    /* REFINED PREMIUM LIGHT TYPOGRAPHY WITH TITLE CASE */
-    .hero-brand {
-      font-size: clamp(6rem, 18vw, 13rem);
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      line-height: 0.9;
-      text-transform: none;
-      margin: 0 0 25px 0;
-    }
-    
-    .hero-stat {
-      font-size: clamp(2.2rem, 6vw, 4.2rem);
-      font-weight: 300;
-      color: #333333;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 55px;
-    }
-
-    /* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
-    .transformation-dashboard {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      margin: 0 0 70px 0;
-      border-top: 4px solid #000000;
-      border-bottom: 4px solid #000000;
-      padding: 35px 0;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .metric-column {
-      flex: 1;
-    }
-    .metric-column.right-align {
-      text-align: right;
-    }
-    
-    .counter-label {
-      font-size: 1.38rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #333333;
-      margin-bottom: 12px;
-    }
-    
-    .counter-box {
-      font-size: clamp(2.0rem, 5.8vw, 4.15rem);
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.04em;
-      margin: 0;
-      white-space: nowrap;
-    }
-    .counter-box.black-type {
-      color: #000000;
-    }
-    .counter-box.green-type {
-      color: #009933;
-    }
-    
-    /* TWO-LINE TRANSITION BLOCKS */
-    .headline-sub {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 900;
-      color: #000000;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 50px;
-    }
-    .headline-sub span {
-      display: block;
-    }
-    
-    .section-title {
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #000000;
-      border-bottom: 4px solid #000000;
-      padding-bottom: 10px;
-      margin-top: 70px;
-      margin-bottom: 30px;
-      font-weight: 900;
-    }
-
-    p {
-      font-size: 1.55rem;
-      color: #111111;
-      margin-bottom: 35px;
-      font-weight: 400;
-    }
-    
-    /* INVESTMENT SECTIONS AND ACTION DETAILS */
-    .investment-tier {
-      margin-bottom: 50px;
-      padding-left: 25px;
-      border-left: 5px solid #000000;
-    }
-    .investment-name {
-      font-size: 1.75rem;
-      font-weight: 900;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .investment-cost {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #000000;
-      margin-bottom: 12px;
-    }
-    .investment-desc {
-      color: #222222;
-      font-size: 1.35rem;
-    }
-
-    .tariff-note {
-      background-color: #f5f5f5;
-      border: 2px solid #000000;
-      padding: 30px;
-      margin-top: 45px;
-      font-size: 1.35rem;
-      line-height: 1.45;
-      color: #000000;
-    }
-    .tariff-title {
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .action-block {
-      margin-top: 60px;
-      padding: 30px 0;
-      border-top: 2px dashed #000000;
-    }
-    .action-email {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #000000;
-      margin-top: 15px;
-    }
-    .action-trigger {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #009933;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Synergy Media HUB — The Supersonic Global Synergy Spacecraft</title>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #14181f;
+            --text-main: #f0f2f5;
+            --text-muted: #a0aec0;
+            --accent: #00e6ff;
+            --accent-glow: rgba(0, 230, 255, 0.2);
+            --border: #232d38;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+        }
+        h1, h2, h3 {
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { font-size: 1.8rem; margin-top: 40px; color: var(--accent); }
+        h3 { font-size: 1.4rem; margin-top: 30px; }
+        p {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            color: #fff;
+            font-weight: 600;
+        }
+        .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .section-block {
+            margin-bottom: 40px;
+        }
+        .invitation-box {
+            background: linear-gradient(135deg, #161f2b 0%, #111622 100%);
+            border-left: 4px solid var(--accent);
+            padding: 30px;
+            border-radius: 4px;
+            margin: 50px 0;
+        }
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        @media(min-width: 768px) {
+            .pathways-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .pathway-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .pathway-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .price {
+            font-size: 1.8rem;
+            color: #fff;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
 
-  <div class="logo-wrapper">
-    <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
-  </div>
+    <header>
+        <h1>The Synergy Media HUB</h1>
+        <p class="accent-text">The Supersonic Global Synergy Spacecraft</p>
+    </header>
 
-  <div class="top-cta">
-    “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
-  </div>
+    <main>
+        <!-- SECTION 1: THE CORE METHODOLOGY DEFINITION -->
+        <section class="section-block">
+            <p><span class="highlight">Conscious Clients Constructing.</span></p>
+            
+            <p>The cutting-edge Technology developed by <span class="highlight">The Synergy Media HUB</span>, in partnership with <span class="highlight">GEMINI (Google AI)</span>, in Action.</p>
+            
+            <p><span class="highlight">This technology stops failed customer payments instantly.</span></p>
+            
+            <p>In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow.</p>
+            
+            <p><span class="highlight">It turns lost sales into cleared bank assets before the browser tab closes.</span></p>
+        </section>
 
-  <h1 class="hero-brand">OpenAI</h1>
-  <div class="hero-stat">83.1% of astray sales detected in milliseconds</div>
-  
-  <div class="transformation-dashboard">
-    <div class="metric-column">
-      <div class="counter-label">The Sales Recovered In Real-Time:</div>
-      <div class="counter-box black-type">$<span id="sales-counter">4,585,300.00</span></div>
-    </div>
-    <div class="metric-column right-align">
-      <div class="counter-label">The Revenue Restored:</div>
-      <div class="counter-box green-type">$<span id="revenue-counter">100,876,420.00</span></div>
-    </div>
-  </div>
-  
-  <div class="headline-sub">
-    <span>Goodbye, Content Marketing.</span>
-    <span>Welcome to Content Clienting.</span>
-  </div>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 40px 0;">
 
-  <p>
-    Conscious Clients Constructing. The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action. Isolating code-level drop-off leaks at the payment gateway instantly. In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow. And converts those aborted sessions into cleared bank assets before the browser tab closes.
-  </p>
+        <!-- SECTION 2: THE SENSOR & LOG DESCRIPTION -->
+        <section class="section-block">
+            <p><span class="highlight">Active sensors across checkout pages capture lost sales streams at the exact second of failure.</span></p>
+            
+            <p>The dashboard delivers real-time velocity logs, showing the exact revenue saved from checkout disconnects instantly.</p>
+            
+            <p><span class="highlight">The system rescues the exact sales that standard systems drop.</span></p>
+        </section>
 
-  <div class="section-title">Real-Time Revenue Realignment</div>
-  <p>
-    Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.
-  </p>
+        <!-- SECTION 3: THE PATHWAYS INVITATION NOTE -->
+        <section class="invitation-box">
+            <h3>AN EXCLUSIVE GROWING OPPORTUNITY:</h3>
+            
+            <p><span class="highlight">This is the invitation for ROI-Focused, Client-First Brands to enter the New Dimension of Content Clienting Compounding, where the Conscious Buyers encounter the Intelligent Providers.</span></p>
+            
+            <p>Securing a position now ensures the ongoing optimization fee remains at 9.5% before it automatically scales to the standard corporate 15% baseline for subsequent portfolios.</p>
+            
+            <p><span class="highlight">This window keeps the initial advantage fully open for visionary leaders focused on long-term market dominance.</span></p>
+        </section>
 
-  <div class="section-title">Active Rollout Capacity</div>
-  <p>
-    This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
-  </p>
+        <!-- SECTION 4 & 5: CORPORATE INVESTMENT PATHWAYS -->
+        <section class="section-block">
+            <h2>Corporate Investment Pathways</h2>
+            
+            <div class="pathways-grid">
+                <!-- PATHWAY 1: UPDATED ONGOING OPTIMIZATION EMPOWERMENT -->
+                <div class="pathway-card featured">
+                    <h3>Ongoing Optimization Empowerment</h3>
+                    <div class="price">$3,500.00 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">/ month</span></div>
+                    
+                    <p><span class="highlight">Maintaining non-stop Intelligent transaction intercept Instruments.</span></p>
+                    
+                    <p>This continuous operation secures non-stop growth, protecting revenue across checkout networks via 30-day alignment cycles.</p>
+                    
+                    <p><span class="highlight">This high-velocity pipeline builds exponential empowerment and massive financial recovery found nowhere else on earth.</span></p>
+                </div>
 
-  <div class="tariff-note">
-    <span class="tariff-title">CRITICAL TARIFF NOTE:</span>
-    Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
-  </div>
+                <!-- PATHWAY 2: REMAINS INTENTIONAL AND UNTOUCHED -->
+                <div class="pathway-card">
+                    <h3>Synergy Extraction with Dynamic Diagnosis</h3>
+                    <div class="price">Single Investment</div>
+                    <p>Full high-level deployment engineered to uncover deep pipeline revenue opportunities across enterprise architectures instantly.</p>
+                </div>
 
-  <div class="section-title">Corporate Investment Pathways</div>
-  <p>
-    Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
-  </p>
+                <!-- PATHWAY 3: REMAINS INTENTIONAL AND UNTOUCHED -->
+                <div class="pathway-card">
+                    <h3>The Global Enterprise Deep Diagnosis</h3>
+                    <div class="price">Enterprise Level</div>
+                    <p>Complete structural analysis of global transaction frameworks to optimize long-term conversion yields.</p>
+                </div>
+            </div>
+        </section>
 
-  <div class="investment-tier">
-    <div class="investment-name">The Global Enterprise Deep Diagnosis</div>
-    <div class="investment-cost">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
-    <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
-  </div>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 50px 0;">
 
-  <div class="investment-tier">
-    <div class="investment-name">Continuous Ledger Subscription</div>
-    <div class="investment-cost">$3,500.00 / month (Secure Automated Billing)</div>
-    <div class="investment-desc">Maintaining non-stop transaction intercept protocols across checkout networks via automated 30-day background alignment cycles, processed through secure payment application.</div>
-  </div>
+        <!-- HIGH VELOCITY PIPELINE CLOSING -->
+        <section class="section-block" style="text-align: center; margin-top: 40px;">
+            <p>. . . <span class="highlight">Delivering sub-second intercept counter-measures and real-time balance tracking updates.</span> . . .</p>
+            
+            <p>This high-velocity pipeline expands and solidifies enterprise portfolios processing over $1,000,000 monthly.</p>
+            
+            <p><span class="highlight">Every microsecond of operation builds greater market dominance and instant revenue protection.</span></p>
+        </section>
 
-  <div class="investment-tier">
-    <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
-    <div class="investment-cost">$7,500.00 / month (Secure Automated Billing)</div>
-    <div class="investment-desc">Delivering sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000 monthly, deployed via secure payment application.</div>
-  </div>
-
-  <div class="action-block">
-    <p>To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</p>
-    <div class="action-email">Direct Transmission: amaral@thesynergymedia.net</div>
-    <div class="action-trigger">Just reply to the email address above with the single word: IGNITE</div>
-  </div>
+    </main>
 
 </div>
-
-<script>
-  let salesCount = 4585300.00;
-  let revenueCount = 100876420.00;
-  
-  const salesElement = document.getElementById('sales-counter');
-  const revenueElement = document.getElementById('revenue-counter');
-  
-  setInterval(() => {
-    const salesIncrement = Math.random() * 850 + 150; 
-    const revenueMultiplier = Math.random() * 25 + 20;
-    const revenueIncrement = salesIncrement * revenueMultiplier;
-    
-    salesCount += salesIncrement;
-    revenueCount += revenueIncrement;
-    
-    salesElement.innerText = salesCount.toLocaleString('en-US', {
-      minimumFractionDigits: 2, maximumFractionDigits: 2
-    });
-    
-    revenueElement.innerText = revenueCount.toLocaleString('en-US', {
-      minimumFractionDigits: 2, maximumFractionDigits: 2
-    });
-  }, 900);
-</script>
 
 </body>
 </html>
