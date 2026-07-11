@@ -5,50 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Synergy Media HUB — The Supersonic Global Synergy Spacecraft</title>
     <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #14181f;
+            --text-main: #f0f2f5;
+            --text-muted: #a0aec0;
+            --accent: #00e6ff;
+            --accent-glow: rgba(0, 230, 255, 0.2);
+            --border: #232d38;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #ffffff;
-            color: #1a202c;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             line-height: 1.8;
             margin: 0;
             padding: 40px 20px;
         }
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
         header {
             text-align: center;
             margin-bottom: 60px;
-            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
         }
         h1, h2, h3 {
-            color: #000000;
+            color: #fff;
             letter-spacing: -0.5px;
         }
         h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        h2 { font-size: 1.8rem; margin-top: 50px; color: #007799; }
-        h3 { font-size: 1.4rem; margin-top: 40px; color: #000000; }
+        h2 { font-size: 1.8rem; margin-top: 40px; color: var(--accent); }
+        h3 { font-size: 1.4rem; margin-top: 30px; }
         p {
-            margin-bottom: 28px;
-            font-size: 1.15rem;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
         }
         .highlight {
-            color: #000000;
-            font-weight: 700;
+            color: #fff;
+            font-weight: 600;
         }
         .accent-text {
-            color: #007799;
+            color: var(--accent);
             font-weight: 600;
         }
         .section-block {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+        }
+        .invitation-box {
+            background: linear-gradient(135deg, #161f2b 0%, #111622 100%);
+            border-left: 4px solid var(--accent);
+            padding: 30px;
+            border-radius: 4px;
+            margin: 50px 0;
+        }
+        .pathways-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        @media(min-width: 768px) {
+            .pathways-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .pathway-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        .pathway-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
         .price {
-            font-size: 1.6rem;
-            color: #007799;
+            font-size: 1.8rem;
+            color: #fff;
             font-weight: 700;
-            margin: 10px 0 20px 0;
+            margin: 15px 0;
         }
     </style>
 </head>
@@ -62,87 +100,70 @@
     </header>
 
     <main>
-        <!-- SECTION 1: THE CORE METHODOLOGY DEFINITION -->
-        <div class="section-block">
-            <p><span class="highlight">Conscious Clients Constructing.</span></p>
-            
+        <!-- SECTION 1 -->
+        <section class="section-block">
+            <p>Conscious Clients Constructing.</p>
             <p>The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action.</p>
-            
-            <p><span class="highlight">This technology stops failed customer payments instantly.</span></p>
-            
+            <p>This technology stops failed customer payments instantly.</p>
             <p>In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow.</p>
-            
-            <p><span class="highlight">It turns lost sales into cleared bank assets before the browser tab closes.</span></p>
-        </div>
+            <p>It turns lost sales into cleared bank assets before the browser tab closes . . .</p>
+        </section>
 
-        <br>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 40px 0;">
 
-        <!-- SECTION 2: THE SENSOR & LOG DESCRIPTION -->
-        <div class="section-block">
-            <p><span class="highlight">Active sensors across checkout pages capture lost sales streams at the exact second of failure.</span></p>
-            
+        <!-- SECTION 2 -->
+        <section class="section-block">
+            <p>. . . Active sensors across checkout pages capture lost sales streams at the exact second of failure.</p>
             <p>The dashboard delivers real-time velocity logs, showing the exact revenue saved from checkout disconnects instantly.</p>
-            
-            <p><span class="highlight">The system rescues the exact sales that standard systems drop.</span></p>
-        </div>
+            <p>The system rescues the exact sales that standard systems drop . . .</p>
+        </section>
 
-        <br>
-
-        <!-- SECTION 3: THE PATHWAYS INVITATION NOTE -->
-        <div class="section-block">
+        <!-- SECTION 3 -->
+        <section class="invitation-box">
             <h3>AN EXCLUSIVE GROWING OPPORTUNITY:</h3>
-            
-            <p><span class="highlight">This is the invitation for ROI-Focused, Client-First Brands to enter the New Dimension of Content Clienting Compounding, where the Conscious Buyers encounter the Intelligent Providers.</span></p>
-            
+            <p>This is the invitation for ROI-Focused, Client-First Brands to enter the New Dimension of Content Clienting Compounding, where the Conscious Buyers encounter the Intelligent Providers.</p>
             <p>Securing a position now ensures the ongoing optimization fee remains at 9.5% before it automatically scales to the standard corporate 15% baseline for subsequent portfolios.</p>
-            
-            <p><span class="highlight">This window keeps the initial advantage fully open for visionary leaders focused on long-term market dominance.</span></p>
-        </div>
+            <p>This window keeps the initial advantage fully open for visionary leaders focused on long-term market dominance . . .</p>
+        </section>
 
-        <br>
-
-        <!-- SECTION 4 & 5: CORPORATE INVESTMENT PATHWAYS -->
-        <div class="section-block">
+        <!-- SECTION 4 & 5 -->
+        <section class="section-block">
             <h2>Corporate Investment Pathways</h2>
             
-            <div class="section-block">
-                <h3>Ongoing Optimization Empowerment</h3>
-                <div class="price">$3,500.00 / month</div>
-                
-                <p><span class="highlight">Maintaining non-stop Intelligent transaction intercept Instruments.</span></p>
-                
-                <p>This continuous operation secures non-stop growth, protecting revenue across checkout networks via 30-day alignment cycles.</p>
-                
-                <p><span class="highlight">This high-velocity pipeline builds exponential empowerment and massive financial recovery found nowhere else on earth.</span></p>
+            <div class="pathways-grid">
+                <!-- PATHWAY 1 -->
+                <div class="pathway-card featured">
+                    <h3>Ongoing Optimization Empowerment</h3>
+                    <div class="price">$3,500.00 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">/ month</span></div>
+                    <p>Maintaining non-stop Intelligent transaction intercept Instruments.</p>
+                    <p>This continuous operation secures non-stop growth, protecting revenue across checkout networks via 30-day alignment cycles.</p>
+                    <p>This high-velocity pipeline builds exponential empowerment and massive financial recovery found nowhere else on earth . . .</p>
+                </div>
+
+                <!-- PATHWAY 2 -->
+                <div class="pathway-card">
+                    <h3>Synergy Extraction with Dynamic Diagnosis</h3>
+                    <div class="price">Single Investment</div>
+                    <p>Full high-level deployment engineered to uncover deep pipeline revenue opportunities across enterprise architectures instantly.</p>
+                </div>
+
+                <!-- PATHWAY 3 -->
+                <div class="pathway-card">
+                    <h3>The Global Enterprise Deep Diagnosis</h3>
+                    <div class="price">Enterprise Level</div>
+                    <p>Complete structural analysis of global transaction frameworks to optimize long-term conversion yields.</p>
+                </div>
             </div>
+        </section>
 
-            <br>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 50px 0;">
 
-            <div class="section-block">
-                <h3>Synergy Extraction with Dynamic Diagnosis</h3>
-                <div class="price">Single Investment Portfolio</div>
-                <p>Full high-level deployment engineered to uncover deep pipeline revenue opportunities across enterprise architectures instantly.</p>
-            </div>
-
-            <br>
-
-            <div class="section-block">
-                <h3>The Global Enterprise Deep Diagnosis</h3>
-                <div class="price">Enterprise Level Portfolio</div>
-                <p>Complete structural analysis of global transaction frameworks to optimize long-term conversion yields.</p>
-            </div>
-        </div>
-
-        <br>
-
-        <!-- HIGH VELOCITY PIPELINE CLOSING -->
-        <div class="section-block" style="margin-top: 60px;">
-            <p>. . . <span class="highlight">Delivering sub-second intercept counter-measures and real-time balance tracking updates.</span> . . .</p>
-            
+        <!-- CLOSING -->
+        <section class="section-block" style="text-align: center; margin-top: 40px;">
+            <p>. . . Delivering sub-second intercept counter-measures and real-time balance tracking updates.</p>
             <p>This high-velocity pipeline expands and solidifies enterprise portfolios processing over $1,000,000 monthly.</p>
-            
-            <p><span class="highlight">Every microsecond of operation builds greater market dominance and instant revenue protection.</span></p>
-        </div>
+            <p>Every microsecond of operation builds greater market dominance and instant revenue protection . . .</p>
+        </section>
 
     </main>
 
