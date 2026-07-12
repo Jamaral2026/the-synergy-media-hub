@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Cache Control Headers to prevent local browser freeze -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>The Synergy Media HUB | OpenAI Live Demo</title>
   <style>
     body {
@@ -42,7 +46,7 @@
       font-weight: 900;
       letter-spacing: -0.07em;
       line-height: 0.8;
-      text-transform: uppercase;
+      text-transform: none; /* Preserves exact OpenAI casing formatting */
       margin: 0 0 20px 0;
     }
     .hero-stat {
@@ -135,12 +139,6 @@
       margin-bottom: 8px;
       letter-spacing: -0.02em;
     }
-    .investment-cost {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #000000;
-      margin-bottom: 12px;
-    }
     .investment-desc {
       color: #222222;
       font-size: 1.35rem;
@@ -166,18 +164,6 @@
       padding: 30px 0;
       border-top: 2px dashed #000000;
     }
-    .action-email {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #000000;
-      margin-top: 15px;
-    }
-    .action-trigger {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #009933;
-      margin-top: 10px;
-    }
     .terminal-link {
       color: #000000;
       text-decoration: none;
@@ -191,7 +177,6 @@
 <div class="container">
 
   <div class="logo-wrapper">
-    <!-- Brand casing fixed strictly to user specification -->
     <div class="hero-brand">OpenAI</div>
     <div class="top-cta">Dynamic Revenue Recovery Diagnostics</div>
   </div>
@@ -213,7 +198,6 @@
 
   <div class="section-title">The Saving Intervention</div>
 
-  <!-- Dashboards Side by Side -->
   <div class="transformation-dashboard">
     <div class="metric-column">
       <div class="counter-label">Stalled Volume</div>
@@ -296,7 +280,8 @@
 
   <div class="tariff-note">
     <span class="tariff-title">Operational Deployment Notice</span>
-    The complete technical demonstration and the architecture behind this recovery system are fully accessible on the <a href="https://jamaral2026.github.io/the-synergy-media-hub/" class="terminal-link" target="_blank">ONLINE PLATFORM</a>.
+    <!-- Cache-busting parameter added to the link to force instantaneous reload across normal browser windows -->
+    The complete technical demonstration and the architecture behind this recovery system are fully accessible on the <a href="https://jamaral2026.github.io/the-synergy-media-hub/?v=production" class="terminal-link" target="_blank">ONLINE PLATFORM</a>.
   </div>
 
 </div>
