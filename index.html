@@ -3,122 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAI Analysis | Conscious Clients Constructing²</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>The Synergy Media HUB - Live Demo: OpenAI</title>
     <style>
-        *, *::before, *::after { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0b0f19; 
-            color: #f1f5f9;
+            background-color: #ffffff;
+            color: #000000;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.4;
             margin: 0;
-            padding: 0;
-            line-height: 1.8;
+            padding: 80px 24px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            display: block !important;
+        }
+        
+        /* LOGO AREA */
+        .logo-wrapper {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        /* UPPER HIGH-URGENCY CTA */
+        .top-cta {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #000000;
+            margin-bottom: 40px;
+            border-left: 6px solid #000000;
+            padding-left: 15px;
+            line-height: 1.2;
+        }
+        
+        /* MONSTER TYPOGRAPHY FOR OPENAI IMPACT */
+        .hero-brand {
+            font-size: clamp(6rem, 18vw, 13rem);
+            font-weight: 900;
+            letter-spacing: -0.07em;
+            line-height: 0.8;
+            text-transform: none;
+            margin: 0 0 20px 0;
+        }
+        
+        .hero-stat {
+            font-size: clamp(2.6rem, 7vw, 4.8rem);
+            font-weight: 900;
+            color: #000000;
+            letter-spacing: -0.05em;
+            line-height: 1.05;
+            margin-bottom: 55px;
+        }
+
+        /* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
+        .transformation-dashboard {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
+            gap: 40px;
+            margin: 0 0 70px 0;
+            border-top: 4px solid #000000;
+            border-bottom: 4px solid #000000;
+            padding: 35px 0;
+            width: 100%;
+            box-sizing: border-box;
         }
-        .container { max-width: 750px; width: 100%; padding: 60px 30px; }
-        .header-tag {
-            font-size: 10pt; text-transform: uppercase; letter-spacing: 3px;
-            color: #10b981; margin-bottom: 20px; font-weight: 700; text-align: center;
+        .metric-column {
+            flex: 1;
         }
-        h1 { font-size: 26pt; font-weight: 700; line-height: 1.3; margin-bottom: 10px; color: #ffffff; text-align: center; }
-        .subtitle { font-size: 13pt; color: #94a3b8; text-align: center; margin-bottom: 45px; }
-        .live-demo-box {
-            background-color: #111827; border: 1px solid #1f2937; border-radius: 12px;
-            padding: 40px 30px; margin-bottom: 45px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        .metric-column.right-align {
+            text-align: right;
         }
-        .demo-status {
-            font-size: 9.5pt; color: #38bdf8; text-transform: uppercase; letter-spacing: 2px;
-            margin-bottom: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px;
+        
+        .counter-label {
+            font-size: 1.38rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #333333;
+            margin-bottom: 12px;
         }
-        .demo-status::before {
-            content: ""; display: inline-block; width: 6px; height: 6px;
-            background-color: #38bdf8; border-radius: 50%; animation: pulse 1.5s infinite;
+        
+        .counter-box {
+            font-size: clamp(2.0rem, 5.8vw, 4.15rem);
+            font-weight: 900;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.04em;
+            margin: 0;
+            white-space: nowrap;
         }
-        .counter-display { font-size: 46pt; font-weight: 800; color: #ffffff; font-variant-numeric: tabular-nums; letter-spacing: -1px; margin: 15px 0; text-align: center; }
-        .counter-label { font-size: 11.5pt; color: #64748b; text-align: center; }
-        .content-section { margin-top: 40px; }
-        p { margin-bottom: 28px; font-size: 12.5pt; color: #cbd5e1; }
-        h2 { font-size: 16pt; color: #ffffff; margin-top: 45px; margin-bottom: 25px; border-left: 3px solid #10b981; padding-left: 15px; font-weight: 700; }
-        .investment-card { background-color: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 35px; margin-bottom: 35px; }
-        .investment-title { font-size: 15pt; font-weight: 700; color: #ffffff; margin-bottom: 5px; }
-        .investment-price { font-size: 19pt; font-weight: 800; color: #10b981; margin-bottom: 20px; }
-        .footer-brand { font-size: 10pt; color: #475569; margin-top: 60px; border-top: 1px solid #1f2937; padding-top: 30px; text-align: center; }
-        @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 1; } 100% { opacity: 0.3; } }
+        .counter-box.black-type {
+            color: #000000;
+        }
+        .counter-box.green-type {
+            color: #009933;
+        }
+        
+        /* TWO-LINE TRANSITION BLOCKS */
+        .headline-sub {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 900;
+            color: #000000;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 50px;
+        }
+        .headline-sub span {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #000000;
+            border-bottom: 4px solid #000000;
+            padding-bottom: 10px;
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 1.55rem;
+            color: #111111;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+        
+        /* INVESTMENT SECTIONS AND ACTION DETAILS */
+        .investment-tier {
+            margin-bottom: 50px;
+            padding-left: 25px;
+            border-left: 5px solid #000000;
+        }
+        .investment-name {
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .investment-cost {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+        .investment-desc {
+            color: #222222;
+            font-size: 1.35rem;
+        }
+
+        .tariff-note {
+            background-color: #f5f5f5;
+            border: 2px solid #000000;
+            padding: 30px;
+            margin-top: 45px;
+            font-size: 1.35rem;
+            line-height: 1.45;
+            color: #000000;
+        }
+        .tariff-title {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .action-block {
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 2px dashed #000000;
+        }
+        .action-email {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #000000;
+            margin-top: 15px;
+        }
+        .action-trigger {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #009933;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header-tag">Live Target Analysis: OpenAI</div>
-        <h1>Conscious Clients Constructing²</h1>
-        <div class="subtitle">The Six Sigma of Content Clienting</div>
 
-        <div class="live-demo-box">
-            <div class="demo-status">Supersonic Revenue Recovery Engine Active</div>
-            <div class="counter-display" id="blueprint-counter">$0.00</div>
-            <div class="counter-label">Leaked Enterprise Pipeline Capital Retained in Milliseconds</div>
+        <!-- LOGO WRAPPER - VISUAL IMAGE ONLY -->
+        <div class="logo-wrapper">
+            <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
         </div>
 
-        <div class="content-section">
-            <p>Conscious Clients Constructing is the cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action.</p>
-            <p>Active software sensors watch the purchase screens and save dropping sales information the exact second a stumble happens.</p>
-            <p>In milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow.</p>
-            <p>It instantly converts those aborted sessions into cleared bank assets before the browser tab closes.</p>
-            <p>Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure.</p>
-            <p>The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.</p>
+        <!-- TARGETED TOP-LEVEL CTA -->
+        <div class="top-cta">
+            “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
+        </div>
 
-            <h2>An Excellent Opportunity for Client-Centric Brands</h2>
-            <p>This Offer is focused on client-focused market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.</p>
-            <p>This Exclusive Recovery Technology remains open for a limited time, at the introductory 9.5% setup rate.</p>
-            <p>Soon, the baseline 15% Regular Activation will come into effect again.</p>
-            <p>This rare opening gives special brands the ultimate Empowerment to build their entire Re-Engineering Revenue Recovery Framework ahead of the marketplace.</p>
-            <p>Instead of imposing restrictions, this is an open invitation for Brands to join The New Community where The Conscious Buyers Encounter the Intelligent Providers, by selecting the symbolic Application that best fits your Optimization Plans.</p>
-
-            <h2>Investment Levels for Sustainable Performance</h2>
-
-            <div class="investment-card">
-                <div class="investment-title">Global Enterprise Deep Diagnosis</div>
-                <div class="investment-price">High-Level Strategic Investment</div>
-                <p>Fixes the checkout pipeline immediately by locating hidden transaction friction.</p>
-                <p>This deployment sets up the entire core architecture needed to protect massive transaction spikes during global traffic peaks.</p>
-                <p>It drives immediate financial benefits straight to your bottom line without a single moment of delay.</p>
+        <!-- MASSIVE TYPOGRAPHY FOR OPENAI IMPACT -->
+        <h1 class="hero-brand">OpenAI</h1>
+        <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
+        
+        <!-- SIDE-BY-SIDE ARCHITECTURE RESTORED INSIDE THE 1100PX CONTAINER -->
+        <div class="transformation-dashboard">
+            <div class="metric-column">
+                <div class="counter-label">The Sales Recovered In Real-Time:</div>
+                <div class="counter-box black-type">$<span id="sales-counter">4,585,300.00</span></div>
             </div>
-
-            <div class="investment-card">
-                <div class="investment-title">Ongoing Optimization Empowerment</div>
-                <div class="investment-price">$3,500.00 <span style="font-size: 11pt; color: #64748b; font-weight: normal;">/ month</span></div>
-                <p>Maintaining non-stop Intelligent transaction intercept Instruments.</p>
-                <p>This setup provides continuous growth and exponential empowerment.</p>
-                <p>It keeps your revenue framework perfectly aligned to maximize long-term client loyalty and protect high-velocity pipelines processing over $1,000,000 monthly.</p>
+            <div class="metric-column right-align">
+                <div class="counter-label">The Revenue Restored:</div>
+                <div class="counter-box green-type">$<span id="revenue-counter">100,876,420.00</span></div>
             </div>
         </div>
-
-        <div class="footer-brand">
-            Compounding. Customized. Conversions. | Deployed by The Synergy Media HUB.
+        
+        <!-- SPECIFIC LINE ISOLATION FOR MAXIMUM CONTRAST -->
+        <div class="headline-sub">
+            <span>Goodbye, Content Marketing.</span>
+            <span>Welcome to Content Clienting.</span>
         </div>
+
+        <!-- ALIGNED TECHNOLOGY INTEGRATION TEXT -->
+        <p>
+            Conscious Clients Constructing.
+        </p>
+
+        <p>
+            The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action.
+        </p>
+
+        <p>
+            This system instantly stops simple website form mistakes, broken buttons, and frozen payment screens at the finish line.
+        </p>
+
+        <p>
+            In milliseconds, this methodology catches high-intent enterprise buyers right when they are about to leave the checkout flow.
+        </p>
+
+        <p>
+            It turns those broken sessions into cleared bank assets before the visitor can even close the browser tab.
+        </p>
+
+        <!-- REALS BLUEPRINT REALIGNMENT -->
+        <div class="section-title">Real-Time Revenue Realignment</div>
+        <p>
+            Active software sensors watch the purchase screens and save dropping sales information the exact second a glitch happens.
+        </p>
+
+        <p>
+            The main dashboard shows live, clear results, displaying the exact money saved from broken checkout code instantly.
+        </p>
+
+        <!-- EXCLUSIVE LAUNCH COHORT -->
+        <div class="section-title">Active Rollout Capacity</div>
+        <p>
+            This active rollout strictly limits system access to exactly ten (10) enterprise partners.
+        </p>
+
+        <p>
+            The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
+        </p>
+
+        <div class="tariff-note">
+            <span class="tariff-title">An Excellent Opportunity:</span>
+            This special recovery setup remains open right now for a select group of client-centric brands.
+            
+            Only 10 corporate slots exist to secure the introductory 9.5% setup parameters.
+            
+            Once these premium spaces fill, the priority window closes, and subsequent entries utilize the baseline 15% framework.
+            
+            This rare opening gives special brands the ultimate tool to shield their entire revenue pipeline ahead of the marketplace.
+        </div>
+
+        <!-- EXCLUSIVE SPECIFIC PATHWAY DETAILS IN ACTIVE VOICE -->
+        <div class="section-title">Corporate Investment Pathways</div>
+        <p>
+            Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
+        </p>
+
+        <div class="investment-tier">
+            <div class="investment-name">The Global Enterprise Deep Diagnosis</div>
+            <div class="investment-cost">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
+            <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
+        </div>
+
+        <div class="investment-tier">
+            <div class="investment-name">Ongoing Optimization Empowerment</div>
+            <div class="investment-cost">$3,500.00 / month</div>
+            <div class="investment-desc">Maintaining non-stop Intelligent transaction intercept Instruments. This setup keeps your system fully protected, permanently guarding your checkout pathways so every single purchase completes successfully.</div>
+        </div>
+
+        <div class="investment-tier">
+            <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
+            <div class="investment-cost">$7,500.00 / month</div>
+            <div class="investment-desc">Delivering maximum processing power and exponential empowerment via unmatchable sub-second transaction defense instruments. This tier injects the complete architecture needed to protect massive transaction spikes during global traffic peaks, driving immediate financial benefits straight to your bottom line without a single moment of delay.</div>
+        </div>
+
+        <!-- CLOSING ENGAGEMENT PROTOCOL -->
+        <div class="action-block">
+            <p>To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</p>
+            <div class="action-email">Direct Transmission: amaral@thesynergymedia.net</div>
+            <div class="action-trigger">Just reply to the email address above with the single word: IGNITE</div>
+        </div>
+
     </div>
 
+    <!-- INTEGRATED HIGH-VELOCITY MULTI-BILLION BILLING COUNTER ENGINE -->
     <script>
-        (function() {
-            let baseAmount = 3841500.00; 
-            const displayTarget = document.getElementById('blueprint-counter');
-            function renderCurrency(val) {
-                return val.toLocaleString('en-US', {
-                    style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2
-                });
-            }
-            displayTarget.innerText = renderCurrency(baseAmount);
-            function progressLoop() {
-                const step = Math.random() * (12.45 - 0.35) + 0.35;
-                baseAmount += step;
-                displayTarget.innerText = renderCurrency(baseAmount);
-                setTimeout(progressLoop, Math.floor(Math.random() * (750 - 200)) + 200);
-            }
-            setTimeout(progressLoop, 400);
-        })();
+      let salesCount = 4585300.00;
+      let revenueCount = 100876420.00;
+      
+      const salesElement = document.getElementById('sales-counter');
+      const revenueElement = document.getElementById('revenue-counter');
+      
+      setInterval(() => {
+        const salesIncrement = Math.random() * 850 + 150; 
+        const revenueMultiplier = Math.random() * 25 + 20;
+        const revenueIncrement = salesIncrement * revenueMultiplier;
+        
+        salesCount += salesIncrement;
+        revenueCount += revenueIncrement;
+        
+        salesElement.innerText = salesCount.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+        
+        revenueElement.innerText = revenueCount.toLocaleString('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+      }, 900);
     </script>
 
 </body>
