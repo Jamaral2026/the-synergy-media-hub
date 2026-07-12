@@ -6,282 +6,248 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>OpenAI Live Demo | The Synergy Media HUB</title>
+  <title>OpenAI Live Revenue Intercept Telemetry</title>
   <style>
-    /* MASTER STRUCTURE */
     body {
-      background-color: #ffffff;
-      color: #000000;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.6;
+      background-color: #050505;
+      color: #ffffff;
+      font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
       margin: 0;
-      padding: 60px 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      width: 100%;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       box-sizing: border-box;
     }
 
-    /* HEADER & BRAND INTEGRITY */
-    .logo-wrapper {
-      margin-bottom: 40px;
-      text-align: left;
-      position: relative;
-    }
-    .hero-brand {
-      font-size: clamp(4rem, 12vw, 8rem);
-      font-weight: 900;
-      letter-spacing: -0.05em;
-      line-height: 1.0;
-      text-transform: none;
-      margin: 0 0 10px 0;
-    }
-    .top-cta {
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000000;
-      border-left: 5px solid #000000;
-      padding-left: 15px;
-      line-height: 1.2;
+    .dashboard-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      border: 1px solid #222222;
+      background-color: #000000;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
 
-    /* INTERACTIVE PULSING INTERCEPT ENGINE */
-    .intercept-status-bar {
+    /* SYSTEM TELEMETRY HEADER */
+    .system-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #222222;
+      padding-bottom: 25px;
+      margin-bottom: 40px;
+    }
+
+    .brand-identity {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+    }
+
+    .brand-identity span {
+      font-weight: 300;
+      color: #888888;
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 5px;
+      letter-spacing: 0.05em;
+    }
+
+    /* THE PULSING SYSTEM INDICATOR */
+    .status-indicator {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 40px;
-      background: #f9f9f9;
-      padding: 15px 20px;
-      border-left: 4px solid #009933;
+      gap: 10px;
+      background: #111111;
+      border: 1px solid #222222;
+      padding: 8px 16px;
+      border-radius: 4px;
     }
-    .pulse-point {
-      width: 12px;
-      height: 12px;
-      background-color: #009933;
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #00ff66;
       border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 0 0 rgba(0, 153, 51, 0.7);
-      animation: interceptPulse 1.6s infinite;
+      box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
+      animation: trackingPulse 1.5s infinite ease-in-out;
     }
-    @keyframes interceptPulse {
+
+    @keyframes trackingPulse {
       0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 153, 51, 0.7);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
       }
       70% {
         transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 153, 51, 0);
+        box-shadow: 0 0 0 8px rgba(0, 255, 102, 0);
       }
       100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 153, 51, 0);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
       }
     }
-    .status-text {
-      font-size: 1.1rem;
+
+    .status-label {
+      font-size: 0.85rem;
       font-weight: 700;
+      color: #00ff66;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000000;
+      letter-spacing: 0.1em;
     }
 
-    /* THE METRIC COUNTER DISPLAYS */
-    .section-headline {
-      font-size: 1.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000000;
-      margin-top: 50px;
-      margin-bottom: 20px;
-      font-weight: 900;
+    /* COUNTER GRID LAYER */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
     }
-    .metric-display {
-      font-size: clamp(2.5rem, 7vw, 4.2rem);
-      font-weight: 900;
-      color: #000000;
-      display: block;
-      margin: 15px 0;
-      letter-spacing: -0.04em;
+
+    @media (max-width: 768px) {
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .metric-panel {
+      background: #080808;
+      border: 1px solid #151515;
+      padding: 30px;
+      position: relative;
+    }
+
+    .panel-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #666666;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    /* ROLLING LIVE DIGITS */
+    .live-counter {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
       font-variant-numeric: tabular-nums;
-    }
-    .metric-display.recovered-green {
-      color: #009933;
-    }
-
-    /* CONTEXTUAL SSS PARAGRAPHS */
-    p {
-      font-size: 1.80rem;
-      color: #111111;
-      margin-top: 0;
-      margin-bottom: 28px;
-      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: #ffffff;
     }
 
-    /* RECOVERY ANCHOR LINK */
-    .terminal-link {
-      color: #000000;
-      text-decoration: none;
-      font-weight: 900;
-      border-bottom: 3px solid #000000;
-      padding-bottom: 2px;
+    .metric-panel.recovered .live-counter {
+      color: #00ff66;
+      text-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
     }
-    .terminal-link:hover {
-      background-color: #f5f5f5;
+
+    /* SYSTEM CONSOLE CONTEXT */
+    .console-log {
+      background: #050505;
+      border: 1px solid #151515;
+      padding: 25px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #aaaaaa;
+    }
+
+    .console-line {
+      margin-bottom: 15px;
+    }
+
+    .console-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-white {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .highlight-green {
+      color: #00ff66;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
+<div class="dashboard-wrapper">
 
-  <!-- BRAND HEAD UNIT -->
-  <div class="logo-wrapper">
-    <div class="hero-brand">OpenAI</div>
-    <div class="top-cta">Dynamic Revenue Recovery Diagnosis</div>
+  <!-- TOP RUNTIME BANNER -->
+  <div class="system-header">
+    <div class="brand-identity">
+      OpenAI
+      <span>REVENUE INTERCEPT TELEMETRY</span>
+    </div>
+    <div class="status-indicator">
+      <span class="pulse-dot"></span>
+      <span class="status-label">SYS.ACTIVE</span>
+    </div>
   </div>
 
-  <!-- THE ACTIVE PULSING POINT -->
-  <div class="intercept-status-bar">
-    <span class="pulse-point"></span>
-    <span class="status-text">Active Re-Engineering Intercept System Live</span>
+  <!-- TWIN GRAPH LIVE COUNTER BLOCK -->
+  <div class="metrics-grid">
+    <div class="metric-panel">
+      <div class="panel-title">Evaporating Unaligned Assets</div>
+      <div class="live-counter" id="stalledDisplay">$20,700,000,000.00</div>
+    </div>
+    <div class="metric-panel recovered">
+      <div class="panel-title">Real-Time Recovered Sales Yield</div>
+      <div class="live-counter" id="recoveredDisplay">$850,000,000.00</div>
+    </div>
   </div>
 
-  <p>The official operational data confirms.</p>
-
-  <p>More than 83% of high-intent enterprise buyers exploring complex configurations walk away right before they finish buying.</p>
-
-  <p>This operational reality is already known.</p>
-
-  <p>Leaving this massive wave of motivated corporate interest completely unaligned cannot be an option for sustainable growth.</p>
-
-  <p>See the concrete numbers for OpenAI, mapped directly by the system:</p>
-
-  <!-- IMPACT COUNTER (STALLED ASSETS) -->
-  <div class="section-headline">The First Impact</div>
-  <span class="metric-display" id="stalledCounter">$20,700,000,000.00</span>
-
-  <p>In high-ticket enterprise API subscriptions and team upgrades evaporates completely during final selection, card entry, and corporate checkout sign-offs because the online form stops working, refuses a card, or confuses the buyer.</p>
-
-  <!-- SAVING COUNTER (GROWING RECOVERY TARGET) -->
-  <div class="section-headline">The Saving Intervention</div>
-  <span class="metric-display recovered-green" id="recoveredCounter">$850,000,000.00</span>
-
-  <p>The Supersonic Re-Engineering Revenue Recovery system steps in within milliseconds, fixes the checkout broken parts while the buyer is still on the screen, and puts verified assets back into confirmed ARR.</p>
-
-  <div class="section-headline">The Anticipation of Gains</div>
-
-  <p>Conscious Clients Constructing.</p>
-  
-  <p>The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action.</p>
-
-  <p>This system instantly stops simple website form mistakes, broken buttons, and frozen payment screens at the finish line.</p>
-
-  <p>In milliseconds, this methodology catches high-intent enterprise buyers right when they are about to leave the checkout flow.</p>
-
-  <p>It turns those broken sessions into cleared bank assets before the visitor can even close the browser tab.</p>
-
-  <p>Active software sensors watch the purchase screens and save dropping sales information the exact second a glitch happens.</p>
-
-  <p>The main dashboard shows live, clear results, displaying the exact money saved from broken checkout code instantly.</p>
-
-  <p>With the scientific neutralization of all hidden checkout blocks and outstanding issues that cause transactions to fail, all purchases go through.</p>
-
-  <p>Instantaneously.</p>
-
-  <p>The reading is exact.</p>
-
-  <p>To secure these pre-delivered results, the window for action is 03 days.</p>
-
-  <p>This is not a temporary fix.</p>
-
-  <p>This is pure precision.</p>
-
-  <p>The technology works seamlessly to secure unearned corporate revenue.</p>
-
-  <p>See how the instant restoration of every stalled purchase updates minute by minute.</p>
-
-  <p>In Real Time.</p>
-
-  <p>Transforming complex transaction drop-offs into cleared capital for the company.</p>
-
-  <p>Without increasing marketing spend by a single dollar.</p>
-
-  <div class="section-headline">An Excellent Opportunity</div>
-
-  <p>This special recovery setup remains open right now for a select group of client-centric brands.</p>
-
-  <p>Only 10 corporate slots exist to secure the introductory 9.5% setup parameters.</p>
-
-  <p>Once these premium spaces fill, the priority window closes, and subsequent entries utilize the baseline 15% framework.</p>
-
-  <p>This rare opening gives special brands the ultimate tool to shield their entire revenue pipeline ahead of the marketplace.</p>
-
-  <div class="section-headline">Ongoing Optimization Empowerment</div>
-
-  <p>Maintaining non-stop Intelligent transaction intercept Instruments.</p>
-
-  <p>This instrument runs continuously behind your systems every single day.</p>
-
-  <p>It guards your digital checkout entries, eliminates customer friction points immediately, and guarantees your sales pathways stay completely clear so every purchase completes successfully.</p>
-
-  <div class="section-headline">Supersonic AIGNITOR Enterprise Scale</div>
-
-  <p>Delivering sub-second intercept counter-measures and real-time tracking updates for high-velocity pipelines processing over $1,000,000 monthly.</p>
-
-  <p>This enterprise architecture grants total market dominance.</p>
-
-  <p>It unleashes maximum processing power to secure massive transaction spikes during global traffic peaks, driving immediate financial benefits straight to your bottom line without a single moment of delay.</p>
-
-  <p>The complete technical demonstration and the architecture behind this recovery system are fully accessible on the <a href="https://jamaral2026.github.io/the-synergy-media-hub/?v=live" class="terminal-link" target="_blank">ONLINE PLATFORM</a>.</p>
+  <!-- LIVE SYSTEM DIAGNOSTIC OUTPUT -->
+  <div class="console-log">
+    <div class="console-line">> Initializing deep gateway intercept tracking loops across checkout layers...</div>
+    <div class="console-line">> Isolating operational discrepancies, form timeouts, and currency misalignments...</div>
+    <div class="console-line">> System status: <span class="highlight-green">Active optimization engine processing high-velocity pipeline traffic.</span></div>
+  </div>
 
 </div>
 
-<!-- RUNTIME GROWING COUNTER ENGINE -->
+<!-- DATA STREAM ENGINE -->
 <script>
-  function animateRevenueCounters() {
-    // Target parameters for OpenAI scale
-    let stalledTarget = 20775000000;
-    let recoveredTarget = 1450000000;
+  function runTelemetryTracker() {
+    // Upper scale specifications for OpenAI pipeline
+    const maxStalled = 20775000000;
+    const maxRecovered = 1450000000;
     
-    // Starting coordinates
-    let stalledCurrent = 20700000000;
-    let recoveredCurrent = 850000000;
+    // Counter start thresholds
+    let currentStalled = 20700000000;
+    let currentRecovered = 850000000;
     
-    // Speed control steps
-    let steps = 120; 
-    let stepCount = 0;
+    // Frame step calculations
+    const totalSteps = 150;
+    let step = 0;
     
-    let incrementStalled = (stalledTarget - stalledCurrent) / steps;
-    let incrementRecovered = (recoveredTarget - recoveredCurrent) / steps;
+    const deltaStalled = (maxStalled - currentStalled) / totalSteps;
+    const deltaRecovered = (maxRecovered - currentRecovered) / totalSteps;
     
-    let counterInterval = setInterval(() => {
-      stepCount++;
-      stalledCurrent += incrementStalled;
-      recoveredCurrent += incrementRecovered;
+    const streamInterval = setInterval(() => {
+      step++;
+      currentStalled += deltaStalled;
+      currentRecovered += deltaRecovered;
       
-      // Print formatted currency values directly to page elements
-      document.getElementById('stalledCounter').innerText = 
-        "$" + Math.floor(stalledCurrent).toLocaleString('en-US') + ".00";
+      // Update displays with localized digit strings
+      document.getElementById('stalledDisplay').innerText = 
+        "$" + Math.floor(currentStalled).toLocaleString('en-US') + ".00";
         
-      document.getElementById('recoveredCounter').innerText = 
-        "$" + Math.floor(recoveredCurrent).toLocaleString('en-US') + ".00";
-      
-      if (stepCount >= steps) {
-        clearInterval(counterInterval);
-        // Guarantee final numbers match perfectly
-        document.getElementById('stalledCounter').innerText = "$" + stalledTarget.toLocaleString('en-US') + ".00";
-        document.getElementById('recoveredCounter').innerText = "$" + recoveredTarget.toLocaleString('en-US') + ".00";
+      document.getElementById('recoveredDisplay').innerText = 
+        "$" + Math.floor(currentRecovered).toLocaleString('en-US') + ".00";
+        
+      if (step >= totalSteps) {
+        clearInterval(streamInterval);
+        document.getElementById('stalledDisplay').innerText = "$" + maxStalled.toLocaleString('en-US') + ".00";
+        document.getElementById('recoveredDisplay').innerText = "$" + maxRecovered.toLocaleString('en-US') + ".00";
       }
-    }, 45); // Smooth live refresh frame rate
+    }, 40); // High-frequency step refresh
   }
 
-  // Fire engine immediately upon window load
-  window.onload = animateRevenueCounters;
+  // Engage tracking stream immediately
+  window.onload = runTelemetryTracker;
 </script>
 
 </body>
