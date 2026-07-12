@@ -1,408 +1,174 @@
 
+/* LOGO AREA */
+.logo-wrapper {
+ margin-bottom: 30px;
+ text-align: left;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Synergy Media HUB - Live Demo: OpenAI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 15pt !important; 
-            line-height: 1.7;
-            color: #111111 !important;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-        }
-        .container {
-            background-color: #ffffff !important;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            display: block !important;
-        }
-        h1 {
-            color: #000000 !important;
-            font-size: 2.6rem !important;
-            margin-bottom: 25px;
-            border-bottom: 3px solid #111111;
-            padding-bottom: 12px;
-            font-weight: bold !important;
-        }
-        h2 {
-            color: #000000 !important;
-            font-size: 1.8rem !important;
-            margin-top: 40px;
-            margin-bottom: 18px;
-            font-weight: bold !important;
-        }
-        p, .continuous-text {
-            margin-bottom: 22px;
-            font-size: 15pt !important;
-        }
-        .subject-lines {
-            margin: 25px 0;
-            padding-left: 25px;
-        }
-        .subject-lines li {
-            margin-bottom: 14px;
-            font-size: 15pt !important;
-            list-style-type: square;
-        }
-        .closing-line {
-            font-size: 18pt !important; 
-            font-weight: bold !important;
-            color: #000000 !important; 
-            margin-top: 60px;
-            padding-top: 25px;
-            border-top: 3px solid #000000;
-        }
-        .ignite-trigger {
-            color: #008000 !important; 
-            font-weight: bold !important;
-        }
-    </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Synergy Media HUB | Conscious Clients Constructing</title>
-  <style>
-    body {
-      background-color: #ffffff;
-      color: #000000;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.4;
-      margin: 0;
-      padding: 80px 24px;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    
-    /* LOGO AREA */
-    .logo-wrapper {
-      margin-bottom: 30px;
-      text-align: left;
-    }
-    
-    /* UPPER HIGH-URGENCY CTA */
-    .top-cta {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #000000;
-      margin-bottom: 40px;
-      border-left: 6px solid #000000;
-      padding-left: 15px;
-      line-height: 1.2;
-    }
-    
-    /* MONSTER TYPOGRAPHY FOR OPENAI IMPACT */
-    .hero-brand {
-      font-size: clamp(6rem, 18vw, 13rem);
-      font-weight: 900;
-      letter-spacing: -0.07em;
-      line-height: 0.8;
-      text-transform: uppercase;
-      margin: 0 0 20px 0;
-    }
-    
-    .hero-stat {
-      font-size: clamp(2.6rem, 7vw, 4.8rem);
-      font-weight: 900;
-      color: #000000;
-      letter-spacing: -0.05em;
-      line-height: 1.05;
-      margin-bottom: 55px;
-    }
+/* UPPER HIGH-URGENCY CTA */
+.top-cta {
+ font-size: clamp(1.2rem, 3vw, 1.8rem);
+ font-weight: 800;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: #000000;
+ margin-bottom: 40px;
+ border-left: 6px solid #000000;
+ padding-left: 15px;
+ line-height: 1.2;
+}
 
-    /* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
-    .transformation-dashboard {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      margin: 0 0 70px 0;
-      border-top: 4px solid #000000;
-      border-bottom: 4px solid #000000;
-      padding: 35px 0;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .metric-column {
-      flex: 1;
-    }
-    .metric-column.right-align {
-      text-align: right;
-    }
-    
-    .counter-label {
-      font-size: 1.38rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #333333;
-      margin-bottom: 12px;
-    }
-    
-    .counter-box {
-      /* REDUCED BY AN ADDITIONAL 2 POINTS FOR OPTIMAL NATURAL BALANCE */
-      font-size: clamp(2.0rem, 5.8vw, 4.15rem);
-      font-weight: 900;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.04em;
-      margin: 0;
-      white-space: nowrap;
-    }
-    .counter-box.black-type {
-      color: #000000;
-    }
-    .counter-box.green-type {
-      color: #009933;
-    }
-    
-    /* TWO-LINE TRANSITION BLOCKS */
-    .headline-sub {
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 900;
-      color: #000000;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 50px;
-    }
-    .headline-sub span {
-      display: block;
-    }
-    
-    .section-title {
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #000000;
-      border-bottom: 4px solid #000000;
-      padding-bottom: 10px;
-      margin-top: 70px;
-      margin-bottom: 30px;
-      font-weight: 900;
-    }
+/* MONSTER TYPOGRAPHY FOR OPENAI IMPACT */
+.hero-brand {
+ font-size: clamp(6rem, 18vw, 13rem);
+ font-weight: 900;
+ letter-spacing: -0.07em;
+ line-height: 0.8;
+ text-transform: uppercase;
+ margin: 0 0 20px 0;
+}
 
-    p {
-      font-size: 1.55rem;
-      color: #111111;
-      margin-bottom: 35px;
-      font-weight: 400;
-    }
-    
-    /* INVESTMENT SECTIONS AND ACTION DETAILS */
-    .investment-tier {
-      margin-bottom: 50px;
-      padding-left: 25px;
-      border-left: 5px solid #000000;
-    }
-    .investment-name {
-      font-size: 1.75rem;
-      font-weight: 900;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .investment-cost {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #000000;
-      margin-bottom: 12px;
-    }
-    .investment-desc {
-      color: #222222;
-      font-size: 1.35rem;
-    }
+.hero-stat {
+ font-size: clamp(2.6rem, 7vw, 4.8rem);
+ font-weight: 900;
+ color: #000000;
+ letter-spacing: -0.05em;
+ line-height: 1.05;
+ margin-bottom: 55px;
+}
 
-    .tariff-note {
-      background-color: #f5f5f5;
-      border: 2px solid #000000;
-      padding: 30px;
-      margin-top: 45px;
-      font-size: 1.35rem;
-      line-height: 1.45;
-      color: #000000;
-    }
-    .tariff-title {
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-      display: block;
-    }
+/* HORIZONTAL SIDE-BY-SIDE ARCHITECTURE */
+.transformation-dashboard {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 40px;
+ margin: 0 0 70px 0;
+ border-top: 4px solid #000000;
+ border-bottom: 4px solid #000000;
+ padding: 35px 0;
+ width: 100%;
+ box-sizing: border-box;
+}
+.metric-column {
+ flex: 1;
+}
+.metric-column.right-align {
+ text-align: right;
+}
 
-    .action-block {
-      margin-top: 60px;
-      padding: 30px 0;
-      border-top: 2px dashed #000000;
-    }
-    .action-email {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: #000000;
-      margin-top: 15px;
-    }
-    .action-trigger {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #009933;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
+.counter-label {
+ font-size: 1.38rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ color: #333333;
+ margin-bottom: 12px;
+}
 
-    <div class="container">
-        <h1>Synergy Extraction with Dynamic Diagnosis</h1>
-        
-        <p class="continuous-text">This live demo details the strategic velocity and revenue recovery pathways simulated for OpenAI.</p>
+.counter-box {
+ /* REDUCED BY AN ADDITIONAL 2 POINTS FOR OPTIMAL NATURAL BALANCE */
+ font-size: clamp(2.0rem, 5.8vw, 4.15rem);
+ font-weight: 900;
+ font-variant-numeric: tabular-nums;
+ letter-spacing: -0.04em;
+ margin: 0;
+ white-space: nowrap;
+}
+.counter-box.black-type {
+ color: #000000;
+}
+.counter-box.green-type {
+ color: #009933;
+}
 
-        <h2>News. Goals. Ambitions. And Plans.</h2>
-        <p class="continuous-text">Recent market movements indicate OpenAI is rapidly expanding enterprise capabilities and scaling multi-modal architectures across global industries. The primary ambition is to secure absolute market dominance in corporate AI adoption while accelerating the roadmap toward AGI integration. Current operational plans involve closing the gap between consumer enthusiasm and complex B2B API implementations for Fortune 500 ecosystems.</p>
+/* TWO-LINE TRANSITION BLOCKS */
+.headline-sub {
+ font-size: clamp(2.4rem, 5vw, 3.8rem);
+ font-weight: 900;
+ color: #000000;
+ letter-spacing: -0.04em;
+ line-height: 1.1;
+ margin-bottom: 50px;
+}
+.headline-sub span {
+ display: block;
+}
 
-        <h2>The Global Enterprise Deep Diagnosis</h2>
-        <p class="continuous-text">A systemic analysis into the current deployment architecture reveals an extraordinary opportunity for immediate expansion. A 34% friction rate in late-stage enterprise onboarding presents a substantial revenue leak. By restructuring this specific adoption pathway, an estimated $450M in recurring revenue can be unlocked within the next fiscal quarter. Leveraging proprietary frameworks such as HAIPP (HUMAN & AI POWER PARTNERSHIP) and HAI Q-VU (HUMAN & AI QUICK VALIDATION UPSCALING) provides the exact counterintuitive leverage needed to transform buyer hesitation into unbreakable loyalty and exponential growth.</p>
+.section-title {
+ font-size: 1.6rem;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ color: #000000;
+ border-bottom: 4px solid #000000;
+ padding-bottom: 10px;
+ margin-top: 70px;
+ margin-bottom: 30px;
+ font-weight: 900;
+}
 
-        <h2>Subject Lines for Direct Outreach</h2>
-        <p class="continuous-text">The following subject lines are focused exclusively on the specific business outcomes and financial ambitions identified in this analysis:</p>
-        <ul class="subject-lines">
-            <li>Unlocking $450M in Q4 Recurring Revenue Through Frictionless Enterprise Adoption</li>
-            <li>Bridging the 34% Retention Gap in Late-Stage Corporate Deployments</li>
-            <li>Scaling API Architectures to Drive 10x Operational Yields</li>
-            <li>Maximizing B2B Lifecycle Value with Advanced Integration Pathways</li>
-            <li>Securing Total Global Market Share via Accelerated Enterprise Onboarding</li>
-        </ul>
+p {
+ font-size: 1.55rem;
+ color: #111111;
+ margin-bottom: 35px;
+ font-weight: 400;
+}
 
-        <h2>Investment Pathways</h2>
-        <p class="continuous-text">To realize these projected outcomes, three distinct strategic avenues are available. Option 1 features a one-payment Investment structured in a highly elevated tier, encompassing the complete architecture of The Global Enterprise Deep Diagnosis. This immediate injection of strategic capital ensures full access to the validation blueprints, accelerating the $450M revenue recovery timeline for a single commitment of $250,000.</p>
-        
-        <p class="continuous-text">Option 2 transitions into a highly focused monthly engagement. For a continuous investment of $45,000 per month, the strategy shifts to sustained alignment and continuous integration of the HAIPP framework across expanding global teams, driving a projected 18% month-over-month growth in successful enterprise deployments.</p>
-        
-        <p class="continuous-text">Option 3 provides a comprehensive, fully managed monthly subscription model. At $85,000 per month, the entire suite of intelligent optimizations is integrated into the operational lifecycle, projecting a 42% overall increase in B2B retention and completely neutralizing onboarding friction across all new corporate partnerships.</p>
+/* INVESTMENT SECTIONS AND ACTION DETAILS */
+.investment-tier {
+ margin-bottom: 50px;
+ padding-left: 25px;
+ border-left: 5px solid #000000;
+}
+.investment-name {
+ font-size: 1.75rem;
+ font-weight: 900;
+ margin-bottom: 8px;
+ letter-spacing: -0.02em;
+}
+.investment-cost {
+ font-size: 1.5rem;
+ font-weight: 800;
+ color: #000000;
+ margin-bottom: 12px;
+}
+.investment-desc {
+ color: #222222;
+ font-size: 1.35rem;
+}
 
-        <p class="closing-line">Just reply to the email address above with the single word: <span class="ignite-trigger">IGNITE</span>.</p>
-<div class="container">
+.tariff-note {
+ background-color: #f5f5f5;
+ border: 2px solid #000000;
+ padding: 30px;
+ margin-top: 45px;
+ font-size: 1.35rem;
+ line-height: 1.45;
+ color: #000000;
+}
+.tariff-title {
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ margin-bottom: 10px;
+ display: block;
+}
 
-  <!-- LOGO WRAPPER - VISUAL IMAGE ONLY -->
-  <div class="logo-wrapper">
-    <img src="logo.png" alt="" style="max-height: 60px; display: block; margin-bottom: 12px;">
-  </div>
+.action-block {
+ margin-top: 60px;
+ padding: 30px 0;
+ border-top: 2px dashed #000000;
+}
+.action-email {
+ font-size: 1.8rem;
+ font-weight: 900;
+ color: #000000;
+ margin-top: 15px;
+}
+.action-trigger {
+ font-size: 1.6rem;
+ font-weight: 900;
+ color: #009933;
+ margin-top: 10px;
+}
 
-  <!-- TARGETED TOP-LEVEL CTA -->
-  <div class="top-cta">
-    “Nobody is immune to the 83.1% + of validated, high-intent consumer traffic that evaporates”
-  </div>
-
-  <!-- MASSIVE TYPOGRAPHY FOR OPENAI IMPACT -->
-  <h1 class="hero-brand">OPENAI</h1>
-  <div class="hero-stat">83.1% OF ASTRAY SALES DETECTED IN MILLISECONDS</div>
-  
-  <!-- SIDE-BY-SIDE ARCHITECTURE RESTORED INSIDE THE 1100PX CONTAINER -->
-  <div class="transformation-dashboard">
-    <div class="metric-column">
-      <div class="counter-label">The Sales Recovered In Real-Time:</div>
-      <div class="counter-box black-type">$<span id="sales-counter">4,585,300.00</span></div>
-    </div>
-    <div class="metric-column right-align">
-      <div class="counter-label">The Revenue Restored:</div>
-      <div class="counter-box green-type">$<span id="revenue-counter">100,876,420.00</span></div>
-</div>
-  </div>
-  
-  <!-- SPECIFIC LINE ISOLATION FOR MAXIMUM CONTRAST -->
-  <div class="headline-sub">
-    <span>Goodbye, Content Marketing.</span>
-    <span>Welcome to Content Clienting.</span>
-  </div>
-
-  <!-- ALIGNED TECHNOLOGY INTEGRATION TEXT -->
-  <p>
-    Conscious Clients Constructing. The cutting-edge Technology developed by The Synergy Media HUB, in partnership with GEMINI (Google AI), in Action. Isolating code-level drop-off leaks at the payment gateway instantly. In Milliseconds, this Methodology intercepts high-intent enterprise buyers abandoning the checkout flow. And converts those aborted sessions into cleared bank assets before the browser tab closes.
-  </p>
-
-  <!-- REALS BLUEPRINT REALIGNMENT -->
-  <div class="section-title">Real-Time Revenue Realignment</div>
-  <p>
-    Active sensor deployment across payment architectures captures leaking transaction data streams at the moment of failure. The dashboard delivers raw API velocity logs, showing the exact capital volume salvaged from raw checkout code disconnects instantly.
-  </p>
-
-  <!-- EXCLUSIVE LAUNCH COHORT -->
-  <div class="section-title">Active Rollout Capacity</div>
-  <p>
-    This active rollout strictly limits system access to exactly ten (10) enterprise partners. The infrastructure accepts only market leaders prepared to deploy immediate processing intelligence and direct baseline protection over volume-chasing tactics.
-  </p>
-
-  <div class="tariff-note">
-    <span class="tariff-title">CRITICAL TARIFF NOTE:</span>
-    Once the 10 corporate slots clear, the introductory allocation window permanently closes. The ongoing infrastructure ledger tracking fee automatically scales from 9.5% to the standard corporate 15% baseline for all subsequent onboarded portfolios.
-  </div>
-
-  <!-- EXCLUSIVE SPECIFIC PATHWAY DETAILS IN ACTIVE VOICE -->
-  <div class="section-title">Corporate Investment Pathways</div>
-  <p>
-    Settlement allocations process directly through corporate bank transfer or secure payment application, updating the operations console upon credit verification:
-  </p>
-
-  <div class="investment-tier">
-    <div class="investment-name">The Global Enterprise Deep Diagnosis</div>
-    <div class="investment-cost">$16,000.00 (Single-Payment Corporate Wire Transfer)</div>
-    <div class="investment-desc">Isolating all drop-off vectors to initialize the baseline recovery layout via high-level, single-payment corporate wire transfer.</div>
-  </div>
-
-  <div class="investment-tier">
-    <div class="investment-name">Continuous Ledger Subscription</div>
-    <div class="investment-cost">$3,500.00 / month (Secure Automated Billing)</div>
-    <div class="investment-desc">Maintaining non-stop transaction intercept protocols across checkout networks via automated 30-day background alignment cycles, processed through secure payment application.</div>
-  </div>
-
-  <div class="investment-tier">
-    <div class="investment-name">Supersonic AIGNITOR Enterprise Scale</div>
-    <div class="investment-cost">$7,500.00 / month (Secure Automated Billing)</div>
-    <div class="investment-desc">Delivering sub-second intercept counter-measures and real-time balance tracking updates for high-velocity pipelines processing over $1,000,000 monthly, deployed via secure payment application.</div>
-  </div>
-
-  <!-- CLOSING ENGAGEMENT PROTOCOL - DIRECT ACTION IN ACTIVE VOICE WITH NEW TERM REPLACEMENTS -->
-  <div class="action-block">
-    <p>To deploy sub-second automated tracking Instruments. And stop code-level processing misalignments, immediately:</p>
-    <div class="action-email">Direct Transmission: amaral@thesynergymedia.net</div>
-    <div class="action-trigger">Just reply to the email address above with the single word: IGNITE</div>
-  </div>
-
-</div>
-
-<!-- INTEGRATED HIGH-VELOCITY MULTI-BILLION BILLING COUNTER ENGINE -->
-<script>
-  let salesCount = 4585300.00;
-  let revenueCount = 100876420.00;
-  
-  const salesElement = document.getElementById('sales-counter');
-  const revenueElement = document.getElementById('revenue-counter');
-  
-  setInterval(() => {
-    const salesIncrement = Math.random() * 850 + 150; 
-    const revenueMultiplier = Math.random() * 25 + 20;
-    const revenueIncrement = salesIncrement * revenueMultiplier;
-    
-    salesCount += salesIncrement;
-    revenueCount += revenueIncrement;
-    
-    salesElement.innerText = salesCount.toLocaleString('en-US', {
-      minimumFractionDigits: 2, maximumFractionDigits: 2
-    });
-    
-    revenueElement.innerText = revenueCount.toLocaleString('en-US', {
-      minimumFractionDigits: 2, maximumFractionDigits: 2
-    });
-  }, 900);
-</script>
-
-</body>
-</html>
